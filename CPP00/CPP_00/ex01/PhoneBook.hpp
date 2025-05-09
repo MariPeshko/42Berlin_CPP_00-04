@@ -21,11 +21,9 @@ public:
 private:
 	int Prompt_For_Add(std::string& data, std::string prompt);
 	// member function
-	// member function
 	Contact	_contacts[8];
 	int		_how_many_cont;
 	static int IndexContact;
-    // Please note that dynamic allocation is forbidden.
 };
 
 #endif

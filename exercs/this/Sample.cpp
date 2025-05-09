@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:08:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/05/08 23:17:59 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/05/09 00:19:33 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Sample::Sample( void ) {
     return;
 }
 
-Sample::Sample( void ) {
+Sample::~Sample( void ) {
     
     std::cout << "Destructor called" << std::endl;
     return;

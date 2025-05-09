@@ -1,12 +1,9 @@
 #include <iostream>
-#include <cstdio> // for CTRL + D cin
 #include <string>
-#include <cctype>
 #include <iomanip> // For setw
-#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-Contact::Contact() {};
+Contact::Contact() {}
 
 // Each column must be 10 characters wide. A pipe character (’|’)
 // separates them. The text must be right-aligned.
@@ -50,6 +47,4 @@ void Contact::Set_Contact(const std::string &f_name, const std::string &l_name,
 	_dark_secret = secret;
 }
 
-Contact::~Contact( void ) {
-	return;
-}
+Contact::~Contact( void ) {}

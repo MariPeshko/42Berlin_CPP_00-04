@@ -5,7 +5,6 @@
 #include <iomanip> // For setw
 #include <limits> // For cin.ignore(std::numeric_limits<std::streamsize>::max()
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 /* Conventionally, header file names are derived from the name 
 of a class defined in that header. */
