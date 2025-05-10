@@ -1,12 +1,24 @@
 #include "Zombie.hpp"
 
+#include <iostream>
+
 int	main(void) {
 
+	int N = 8;
 	// new array
-	Student* students = new Student[42];
+	Zombie* zombies = zombieHorde(N, "Grace");
 
-	//Do some staff here
+	if(zombies == NULL)
+		return (0);
 
-	delete [] students;
+	int	i = 0;
+	while(i < N) {
+		std::cout << (i + 1) << " ";
+		zombies[i].announce();
+		i++;
+	}
+
+	delete [] zombies;
+	return (0);
 	
 }
