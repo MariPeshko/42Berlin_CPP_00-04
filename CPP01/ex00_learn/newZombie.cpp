@@ -5,7 +5,8 @@
 // of the function scope.
 Zombie* newZombie( std::string name )
 {
-    Zombie *z = new Zombie("Vadym");
+    Zombie *z = new Zombie();
+    z->setName(name);
     return z;
 }
 

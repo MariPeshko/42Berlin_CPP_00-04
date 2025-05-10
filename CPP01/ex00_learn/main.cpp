@@ -6,9 +6,18 @@
 // the heap.
 int	main(void) {
 
+	Zombie Me;
+
+	Me.setName("Maryna");
+	Me.announce();
+
 	Zombie *RefZombie = newZombie("Vadym");
 	RefZombie->announce();
-	randomChump("RandomChump");
 	delete RefZombie;
+
+	Zombie ConstructorOverloading("ConstructorOverloading");
+	
+	randomChump("RandomChump");
+
 	return 0;
 }

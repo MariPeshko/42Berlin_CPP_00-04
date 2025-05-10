@@ -6,7 +6,14 @@
 Zombie::Zombie() : name("first_name") {}
 
 // The Constructor overloading
-Zombie::Zombie(std::string name) : name(name) {}
+Zombie::Zombie(std::string name) : name(name)
+{
+    this->announce();
+}
+
+void Zombie::setName(const std::string& rename) {
+    name = rename;
+}
 
 void Zombie::announce(void) {
     std::cout << name << ": ";
