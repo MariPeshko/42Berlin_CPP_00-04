@@ -2,18 +2,16 @@
 #include <string>
 #include "HumanA.hpp"
 
-// The Constructor
-HumanA::HumanA() : name("HumanA") {}
+
 
 // HumanA takes the Weapon in its constructor
 
 // The Constructor overloading
 // Reference to string? Or not? Reference to weapon?
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon& weapon)
 	:	name(name),
 		WeaponA(weapon)
 {
-
 }
 
 /* void HumanA::announce(void) {
@@ -25,10 +23,10 @@ void HumanA::setName(const std::string& rename) {
     name = rename;
 } */
 
-void	attack(void) {
+void	HumanA::attack(void) {
      //<name> attacks with their <weapon type>
     std::cout << this->name << " attacks with their ";
-    std::cout << this->
+    std::cout << WeaponA.getType() << std::endl;
 }
 
 
@@ -41,4 +39,7 @@ HumanA::~HumanA( void ) {
 
 /*
 Notes:
+// The unused Constructor
+// HumanA::HumanA() : name("HumanA") {}
+
 */

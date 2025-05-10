@@ -7,17 +7,16 @@
 class	Weapon
 {
     public:
-		Weapon( void );
-		~Weapon( void );
-		//void	announce(void);
-		Weapon(std::string name);
-		//void	setName(const std::string& rename);
+        Weapon( void );
+        ~Weapon( void );
+        Weapon(std::string name);
 
         //member function that returns a constant reference to type
-        //std::string& getType();
+        const std::string& getType() const;
+
         //member function that sets type using
         //the new value passed as a parameter
-        //setType(std::string mew_type);
+        void setType(std::string new_type);
 
 	private:
         std::string type;

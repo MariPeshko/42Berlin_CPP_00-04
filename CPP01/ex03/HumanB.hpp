@@ -10,23 +10,20 @@ class	HumanB
     public:
 		HumanB( void );
 		~HumanB( void );
-		//void	announce(void);
 		HumanB(std::string name);
-		//void	setName(const std::string& rename);
-
-		void setWeapon(Weapon instance);
-
-		// <name> attacks with their <weapon type>
-		//void	attack();
-
+		void	attack(void);
+		void	setWeapon(Weapon& instance);
+		
 	private:
         std::string name;
-        Weapon	WeaponB;
+        Weapon	*WeaponB;
 };
 
 #endif
 
 /*
 Notes:
+a pointer to Weapon instead of a reference.
+More - in .cpp.
 
 */

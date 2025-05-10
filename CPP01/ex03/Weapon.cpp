@@ -3,26 +3,24 @@
 #include <string>
 
 // The Constructor
-Weapon::Weapon() : name("Weapon") {}
+Weapon::Weapon() : type("DefaultWeapon") {}
 
 // The Constructor overloading
-Weapon::Weapon(std::string name) : name(name) {}
+Weapon::Weapon(std::string name) : type(name) {}
 
-/* void Weapon::announce(void) {
-    std::cout << name << ": ";
-    std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+// member function that returns a constant reference to type
+const std::string&	Weapon::getType() const {
+	return type;
 }
 
-void Weapon::setName(const std::string& rename) {
-    name = rename;
-} */
+// Why const???
+void Weapon::setType(const std::string new_type) {
+	this->type = new_type;
+}
 
-// The destructor must print a message with 
-// the name of the zombie for debugging purposes.
 Weapon::~Weapon( void ) {
-    std::cout << "Desctructor called for ";
-    std::cout << this->name << std::endl;
-
+   // std::cout << "Desctructor called for ";
+    // std::cout << this->type << std::endl;
 }
 
 /*
