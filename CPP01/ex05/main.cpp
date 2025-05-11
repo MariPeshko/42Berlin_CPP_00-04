@@ -1,4 +1,5 @@
 #include "Harl.hpp"
+#include <iostream>
 
 // Use pointer to member function 
 // to determine which function to call
@@ -9,10 +10,10 @@ int  main () {
 
     Harl harl;
 
+	harl.complain("ERROR");
+	harl.complain("WARNING");
     harl.complain("INFO");
 	harl.complain("DEBUG");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
 	harl.complain("");
     
     return 0;
