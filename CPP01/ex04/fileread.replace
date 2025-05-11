@@ -1,1 +1,10 @@
-copy content of <filename> into a new file
+2.3.1 References
+
+The new standard introduced a new kind of reference: 
+an “rvalue reference,” which we’ll cover in § 13.6.1 
+(p. 532). These references are primarily intended 
+for use inside classes. Technically speaking, when 
+we use the term reference, we mean “lvalue reference.”
+
+A reference defines an alternative name for an object. 
+A reference type “refers to” another type.

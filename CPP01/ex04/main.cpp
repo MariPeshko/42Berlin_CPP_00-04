@@ -26,8 +26,10 @@ int	main(int argc, char **argv)
     }
 
 	std::string line;
+	std::ofstream	ofs1(filename.append(".replace")); // why? .c_str()
+
     while (std::getline(ifs, line)) {
-        std::cout << line << std::endl;
+		ofs1 << line << std::endl;
     }
 
 	// std::string		StringOccur(argv[2]);
@@ -39,11 +41,12 @@ int	main(int argc, char **argv)
 	// ok: read operation successful . . .
 
 	ifs.close();
+	ofs1.close();
 
 	//-----------------------------------------
 	// append name of file and '.replace'
-	std::ofstream	ofs1(filename.append(".replace")); // why? .c_str()
+	/* std::ofstream	ofs1(filename.append(".replace")); // why? .c_str()
 
-	ofs1 << "copy content of <filename> into a new file" << std::endl;
+	ofs1 << "copy content of <filename> into a new file" << std::endl; */
 	return 0;
 }
