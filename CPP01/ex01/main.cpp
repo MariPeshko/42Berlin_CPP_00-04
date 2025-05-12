@@ -1,11 +1,11 @@
 #include "Zombie.hpp"
-
 #include <iostream>
 
+// new array of instances
 int	main(void) {
 
 	int N = 8;
-	// new array
+	
 	Zombie* zombies = zombieHorde(N, "Grace");
 
 	if(zombies == NULL)

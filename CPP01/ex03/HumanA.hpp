@@ -1,9 +1,9 @@
-#ifndef HUMANA_H
-# define HUMANA_H
-
 #include <string>
 #include <iostream>
 #include "Weapon.hpp"
+
+#ifndef HUMANA_H
+# define HUMANA_H
 
 class	HumanA
 {
@@ -19,8 +19,3 @@ class	HumanA
 };
 
 #endif
-
-/*
-Notes:
-
-*/

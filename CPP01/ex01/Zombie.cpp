@@ -24,17 +24,3 @@ Zombie::~Zombie( void ) {
     std::cout << this->name << std::endl;
 
 }
-
-/*
-Notes:
-A class can have more than one constructor. 
-This is called constructor overloading in C++.
-
-Zombie::Zombie(std::string name) : _name(name)
-{
-}
-
-In header:
-Zombie(std::string name);
-
-*/

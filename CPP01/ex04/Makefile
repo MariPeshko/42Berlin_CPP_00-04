@@ -19,10 +19,10 @@ $(OBJ_DIR)%.o: %.cpp | $(OBJ_DIR)
 	$(CC) $(FLAGS) $(INC) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
