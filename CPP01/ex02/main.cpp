@@ -14,7 +14,7 @@ int	main(void) {
 
 	std::string original("HI THIS IS BRAIN");
 	std::string *stringPTR = &original;
-	std::string& stringREF = original;
+	std::string &stringREF = original;
 
 	std::cout << "The memory address of the string variable:" << std::endl; 
 	std::cout << &original << std::endl;
