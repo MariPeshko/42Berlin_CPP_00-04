@@ -22,7 +22,3 @@ Weapon::~Weapon( void ) {
    // std::cout << "Desctructor called for ";
     // std::cout << this->type << std::endl;
 }
-
-/*
-Notes:
-*/
