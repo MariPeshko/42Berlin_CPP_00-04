@@ -11,8 +11,6 @@ int	main()
 	int	i = 0;
 	
 	while (1) {
-		/* if (i == 7)
-			i = 0; */
 
         std::cout << "Please enter the command (ADD, SEARCH or EXIT):" << std::endl;
         

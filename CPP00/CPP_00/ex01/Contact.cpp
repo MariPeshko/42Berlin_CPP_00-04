@@ -18,7 +18,7 @@ void Contact::Print_Column(const std::string& str)
         std::cout << "|" << std::setw(10) << str;
 }
 
-void Contact::Display_All_Cont() 
+void Contact::Display_Full_Cont() 
 {
 	std::cout << "First Name: " << _first_name << std::endl;
 	std::cout << "Last Name: " << _last_name << std::endl;

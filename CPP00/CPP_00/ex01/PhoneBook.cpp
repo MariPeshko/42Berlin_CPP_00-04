@@ -6,14 +6,13 @@
 #include <limits> // For cin.ignore(std::numeric_limits<std::streamsize>::max()
 #include "PhoneBook.hpp"
 
-/* Conventionally, header file names are derived from the name 
-of a class defined in that header. */
-
-// constractor and initialization list
+// Constractor and initialization list
 PhoneBook::PhoneBook() : _how_many_cont(0) {}
 
 void PhoneBook::Search_Contact()
 {
+	int	index;
+
 	if (_how_many_cont == 0)
 	{
 		std::cout << "There are no contacts in the phone book." << std::endl;
@@ -28,20 +27,15 @@ void PhoneBook::Search_Contact()
 	std::cout << std::string(44, '-') << std::endl;
 	for (int i = 0; i < _how_many_cont; i++)
 		_contacts[i].Display_Cont(i + 1);
-	/*After reading the number, the newline character \n 
-	(from when the user pressed Enter) is still sitting 
-	in the input buffer. If you then try to std::getline() 
-	to read a string, it immediately sees the leftover 
-	\n and thinks it's the end of input — so it returns an empty string.*/
-	int index;
 	while (true)
 	{
 		std::cout << "Please enter the index of the contact: ";
 		if (std::cin >> index && index >= 1 && index <= _how_many_cont)
 		{
-			// std::cin.ignore(...) to flush out any unwanted leftover characters
+			// std::cin.ignore(...) to flush out 
+			// any unwanted leftover characters
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			_contacts[index - 1].Display_All_Cont();
+			_contacts[index - 1].Display_Full_Cont();
 			break;
 		}
 		else
@@ -76,7 +70,7 @@ int PhoneBook::Prompt_For_Add(std::string& data, std::string prompt)
 		}
 		else if (prompt == "Enter the phone number: ") {
 			bool valid = true;
-			for (size_t i = 0; data[i] != '\0'; i++) // i < data.size();
+			for (size_t i = 0; data[i] != '\0'; i++) // ( ?? what i < data.size();)
 			{
 				if (!isdigit(data[i]))
 				{
@@ -101,12 +95,14 @@ int PhoneBook::Prompt_For_Add(std::string& data, std::string prompt)
 	return 0;
 }
 
+// variable i to count number of contacts
+// total number is 8, so biggest value of 'i' is 7
 int PhoneBook::Add_Contact()
 {
 	static int i = 0;
 
 	std::string f_name, l_name, n_name, ph_number, secret;
-	if (i == 3)
+	if (i == 7)
 	{
 		std::cout << "Reminder:" << std::endl;
 		std::cout << "The user tries to add a 9th contact, ";
@@ -133,6 +129,7 @@ int PhoneBook::Add_Contact()
 	return 0;
 }
 
+// Destructor
 PhoneBook::~PhoneBook( void ) {
 	return;
 }
