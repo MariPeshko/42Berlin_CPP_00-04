@@ -17,8 +17,8 @@ public:
         return value;
     }
 
-    // (Overloaded) Assignment operator (default behavior is fine, but 
-    // we can define it explicitly)
+    // (Overloaded) Assignment operator (default behavior is fine, 
+    // but we can define it explicitly)
     // Overloading the assignment operator
     Integer& operator=(const Integer& rhs) {
         std::cout << "Assignment operator called\n";
