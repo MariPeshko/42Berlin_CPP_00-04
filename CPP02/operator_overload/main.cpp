@@ -9,7 +9,7 @@ int main(void) {
 
 	std::cout << "Value of x : " << x << std::endl;
 	std::cout << "Value of y : " << y << std::endl;
-	y = Integer( 12 );
+	y = Integer( 12 ); // y.operator= (Integer( 12 )); 
 	std::cout << "Value of y : " << y << std::endl;
 
 	std::cout << "Value of z : " << z << std::endl;
