@@ -31,7 +31,6 @@ Sample::Sample( Sample const & src ) {
 
     std::cout << "Copy Constructor Called" << std::endl;
     *this = src;
-    return;
 }
 
 // Assignment operator called
@@ -39,7 +38,7 @@ Sample &	Sample::operator=( Sample const & rhs ) {
 	
 	std::cout << "Assignment operator called" << std::endl;
     if (this != &rhs) {
-        this->_foo = rhs.getFoo();
+        this->_value = rhs.getFoo();
     }
     return *this;
 }

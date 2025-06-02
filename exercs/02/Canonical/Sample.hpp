@@ -6,6 +6,7 @@
 
 class Sample {
 
+	
 public:
 
 	// Constructor
