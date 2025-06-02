@@ -1,6 +1,7 @@
 #ifndef MY_CANONICAL_CLASS
 #define MY_CANONICAL_CLASS
 
+
 #include <iostream>
 
 class Sample {
@@ -11,17 +12,15 @@ public:
     Sample( void );									// Canonical
 	// Constructor parametric
 	Sample(int const n);
-
 	// Copy constructor;
 	Sample( Sample const & src );					// Canonical
 	// Copy assignment operator;
 	// To update the current instance
 	Sample &	operator=( Sample const & rhs );	// Canonical
-
-	// C++98 doesn't have move semantics
-
 	// Destructor
 	~Sample( void );								// Canonical
+	
+	int	getFoo( void ) const;
 
 private:
 
