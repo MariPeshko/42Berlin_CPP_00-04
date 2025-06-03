@@ -3,9 +3,6 @@
 
 int main( void ) {
 
-	Fixed e( 42.42f );
-	std::cout << e << std::endl;
-
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
@@ -25,3 +22,15 @@ int main( void ) {
 
 	return 0;
 }
+
+/**
+ * Most std::cout settings round it to two decimal places by default.
+ * 
+ * ///
+ * 
+ * Why does it print 42.4219 instead of exactly 42.42? 
+ * And why are there 4 digits after the dot?
+ * 
+ * By default, std::cout prints float values with 6 digits, but rounds 
+ * to 4 decimal digits (platform/implementation may vary slightly).
+*/

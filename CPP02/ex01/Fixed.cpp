@@ -76,7 +76,6 @@ int Fixed::toInt(void) const {
 // toFloat() converts the fixed-point value to a floating-point value
 std::ostream &	operator<<(std::ostream &o, Fixed const &i) {
 
-    std::cout << "operator<<" << std::endl;
     o << i.toFloat();
     return o;
 
