@@ -12,21 +12,6 @@ Fixed::Fixed(int const n) : _value( n ) {
     //return;
 }
 
-/* // intra version
-Fixed::Fixed( Fixed const & src ) {
-
-    std::cout << "Copy Constructor Called" << std::endl;
-    *this = src;
-} */
-
-// My version based on information from CPP+ Primer book
-// and other sources (sorry, chat gpt as well, I'm in a rush)
-/* Fixed::Fixed( Fixed const & src ) {
-
-    std::cout << "Copy Constructor Called" << std::endl;
-    this->_value = src.getRawBits();  // Copy fields directly
-} */
-
 // C++ Primer Book version
 Fixed::Fixed( Fixed const & src ) : 
     _value(src.getRawBits()) {
@@ -60,3 +45,22 @@ Fixed::~Fixed() {
     std::cout << "Destructor Called" << std::endl;
     return;
 }
+
+//////////////////////////////////////////////////////
+
+// Copy Contsructor issue
+
+/* // intra version
+Fixed::Fixed( Fixed const & src ) {
+
+    std::cout << "Copy Constructor Called" << std::endl;
+    *this = src;
+} */
+
+// My version based on information from CPP+ Primer book
+// and other sources (sorry, chat gpt as well, I'm in a rush)
+/* Fixed::Fixed( Fixed const & src ) {
+
+    std::cout << "Copy Constructor Called" << std::endl;
+    this->_value = src.getRawBits();  // Copy fields directly
+} */
