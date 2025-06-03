@@ -8,14 +8,17 @@ class Fixed
 
 public:
     Fixed( void );
-	// Constructor parametric
+	// parametric constructors 
 	Fixed(int const n);
+	Fixed(const float n);
 	// Copy constructor;
 	Fixed( Fixed const & src );					// Canonical
 	// Copy assignment operator;
 	Fixed &	operator=( Fixed const & rhs );		// Canonical
-    ~Fixed();									// Canonical
+    ~Fixed( void );								// Canonical
 
+	float	toFloat(void) const;
+	int		toInt(void) const;
 	int		getRawBits(void) const;
     void	setRawBits(int const raw);
 
@@ -25,6 +28,11 @@ private:
 
 };
 
+// An overload of the insertion («) operator that 
+// inserts a floating-point representation 
+// of the fixed-point number into the output stream object 
+// passed as a parameter.
+std::ostream &	operator<<(std::ostream &o, Fixed const &i);
 
 
 #endif
