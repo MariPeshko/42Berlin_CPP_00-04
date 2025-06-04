@@ -52,8 +52,7 @@ int	main( void ) {
 	//test_comparisons(); // 
 	
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << "b: " << b << std::endl;
+
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl;
 	std::cout << std:: endl;
 
@@ -66,20 +65,19 @@ int	main( void ) {
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl;
 	std::cout << std:: endl;
 
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed c(5);
+	std::cout << "a: " << a << std::endl;
 	std::cout << "b: " << b << std::endl;
+	std::cout << "c: " << c << std::endl;
 
-	//std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 
 	return 0;
 
 }
-
-
-/**
- The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
-post-decrement) operators, which will increase or decrease the fixed-point value by
-the smallest representable ϵ, such that 1 + ϵ > 1.
-*/
 
 // true 'ϵ', the smallest representable 
 // non-zero value in my system.

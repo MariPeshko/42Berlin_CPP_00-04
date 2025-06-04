@@ -41,7 +41,10 @@ public:
 	Fixed operator--();    // pre-decrement
 	Fixed operator--(int); // post-decrement
 
-
+	static Fixed & min(Fixed &lhs, Fixed &rhs);
+	static const Fixed & min(const Fixed &lhs, const Fixed &rhs);
+	static Fixed & max(Fixed &lhs, Fixed &rhs);
+	static const Fixed& max(const Fixed &lhs, const Fixed &rhs);
 
 private:
     int		_value;

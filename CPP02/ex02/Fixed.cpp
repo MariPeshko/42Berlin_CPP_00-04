@@ -58,23 +58,17 @@ void Fixed::setRawBits(int const raw) {
 // 12.75 * 256 = 3264
 // To read value: 3264 / 256 = 12.75
 float Fixed::toFloat(void) const {
-
     return static_cast<float>(_value) / (1 << _fractbits);
-
 }
 
 int Fixed::toInt(void) const {
-
 	return _value >> _fractbits;
-
 }
 
 // toFloat() converts the fixed-point value to a floating-point value
 std::ostream &	operator<<(std::ostream &o, Fixed const &i) {
-
     o << i.toFloat();
     return o;
-
 }
 
 // new my function
@@ -108,7 +102,6 @@ Fixed Fixed::operator/(const Fixed& rhs) const {
 }
 
 // comparisons
-
 bool Fixed::operator>(const Fixed& rhs) const {
 	return this->_value > rhs._value;
 }
@@ -163,8 +156,39 @@ Fixed Fixed::operator--(int) {
 	return tmp;
 }
 
-
 // min && min cost && max && max const
 
+// The standard library’s std::min(a, b) returns
+// The first argument if both are equal.
+Fixed& Fixed::min(Fixed &lhs, Fixed &rhs) {
+    if(lhs < rhs)
+        return lhs;
+    if(rhs < lhs)
+        return rhs;
+    return lhs;
+}
 
+const Fixed& Fixed::min(const Fixed &lhs, const Fixed &rhs) {
+    if(lhs < rhs)
+        return lhs;
+    if(rhs < lhs)
+        return rhs;
+    return lhs;
+}
+
+Fixed& Fixed::max(Fixed &lhs, Fixed &rhs) {
+    if(lhs > rhs)
+        return lhs;
+    if(rhs > lhs)
+        return rhs;
+    return lhs;
+}
+
+const Fixed& Fixed::max(const Fixed &lhs, const Fixed &rhs) {
+    if(lhs > rhs)
+        return lhs;
+    if(rhs > lhs)
+        return rhs;
+    return lhs;
+}
 
