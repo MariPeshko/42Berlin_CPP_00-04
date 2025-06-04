@@ -8,17 +8,14 @@ class Fixed
 
 public:
     Fixed( void );
-	// parametric constructors 
+	// Constructor parametric
 	Fixed(int const n);
-	Fixed(const float n);
 	// Copy constructor;
 	Fixed( Fixed const & src );					// Canonical
 	// Copy assignment operator;
 	Fixed &	operator=( Fixed const & rhs );		// Canonical
-    ~Fixed( void );								// Canonical
+    ~Fixed();									// Canonical
 
-	float	toFloat(void) const;
-	int		toInt(void) const;
 	int		getRawBits(void) const;
     void	setRawBits(int const raw);
 
@@ -28,8 +25,6 @@ private:
 
 };
 
-
-std::ostream &	operator<<(std::ostream &o, Fixed const &i);
 
 
 #endif
