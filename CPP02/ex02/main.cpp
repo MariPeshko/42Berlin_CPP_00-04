@@ -51,16 +51,22 @@ int	main( void ) {
 	//test_arith();
 	//test_comparisons(); // 
 	
-	/* Fixed a;
+	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << "b: " << b << std::endl;
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl;
+	std::cout << std:: endl;
 
-	std::cout << a << std::endl;
-	//std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	//std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << "  a: " << a << std::endl;
+	std::cout << "++a: " << ++a << std::endl;
+	std::cout << "  a: " << a << std::endl;
+	std::cout << "a++: " << a++ << std::endl;
+	std::cout << "  a: " << a << std::endl;
 
-	std::cout << b << std::endl; */
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl;
+	std::cout << std:: endl;
+
+	std::cout << "b: " << b << std::endl;
 
 	//std::cout << Fixed::max( a, b ) << std::endl;
 
@@ -74,3 +80,7 @@ int	main( void ) {
 post-decrement) operators, which will increase or decrease the fixed-point value by
 the smallest representable ϵ, such that 1 + ϵ > 1.
 */
+
+// true 'ϵ', the smallest representable 
+// non-zero value in my system.
+// #define EPSILON (1.0f / (1 << 8))  // 1 / 256 = 0.00390625f

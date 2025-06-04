@@ -1,9 +1,7 @@
 #ifndef FIXED_H
 # define FIXED_H
 
-// true 'ϵ', the smallest representable 
-// non-zero value in my system.
-#define EPSILON (1.0 / (1 << 8))
+
 
 #include <iostream>
 
@@ -12,14 +10,14 @@ class Fixed
 
 public:
     Fixed( void );
-	// parametric constructors 
+	// Parametric constructors 
 	Fixed( int const n );
 	Fixed( const float n );
 	// Copy constructor;
-	Fixed( Fixed const & src );					// Canonical
+	Fixed( Fixed const & src );	
 	// Copy assignment operator;
-	Fixed &	operator=( Fixed const & rhs );		// Canonical
-    ~Fixed( void );								// Canonical
+	Fixed &	operator=( Fixed const & rhs );	
+    ~Fixed( void );								
 
 	float	toFloat(void) const;
 	int		toInt(void) const;
@@ -37,6 +35,11 @@ public:
 	bool operator<=(const Fixed& rhs) const;
 	bool operator==(const Fixed& rhs) const;
 	bool operator!=(const Fixed& rhs) const;
+
+	Fixed operator++();    // pre-increment
+	Fixed operator++(int); // post-increment
+	Fixed operator--();    // pre-decrement
+	Fixed operator--(int); // post-decrement
 
 
 

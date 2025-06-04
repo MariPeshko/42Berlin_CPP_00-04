@@ -3,7 +3,7 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed( void ) : _value(0) {
-    std::cout << "Default Constructor Called" << std::endl;
+    //std::cout << "Default Constructor Called" << std::endl;
     return;
 }
 
@@ -25,14 +25,14 @@ Fixed::Fixed(const float n) : _value(roundf(n * (1 << _fractbits))) {
 Fixed::Fixed( Fixed const & src ) : 
 	
 	_value(src.getRawBits()) {
-    std::cout << "Copy Constructor Called" << std::endl;
+    //std::cout << "Copy Constructor Called" << std::endl;
 
 }
 
 // Assignment operator called
 Fixed &	Fixed::operator=( Fixed const & rhs ) {
 	
-	std::cout << "Copy Assignment Operator called" << std::endl;
+	//std::cout << "Copy Assignment Operator called" << std::endl;
     if (this != &rhs) {
         this->_value = rhs.getRawBits(); // fix
     }
@@ -40,7 +40,7 @@ Fixed &	Fixed::operator=( Fixed const & rhs ) {
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor Called" << std::endl;
+    //std::cout << "Destructor Called" << std::endl;
     return;
 }
 
@@ -107,6 +107,8 @@ Fixed Fixed::operator/(const Fixed& rhs) const {
 
 }
 
+// comparisons
+
 bool Fixed::operator>(const Fixed& rhs) const {
 	return this->_value > rhs._value;
 }
@@ -132,6 +134,35 @@ bool Fixed::operator!=(const Fixed& rhs) const {
 }
 
 // 4 increment/decrement
+
+// pre-increment
+Fixed Fixed::operator++() {
+    this->_value++;
+	return *this;
+}
+
+// post-increment
+// The int parameter is not passed at runtime;
+// it's just a syntactic marker.
+Fixed Fixed::operator++(int) {
+    Fixed tmp(*this);
+    this->_value++;
+	return tmp;
+}
+
+// pre-decrement
+Fixed Fixed::operator--() {
+    this->_value--;
+	return *this;
+}
+
+// post-decrement
+Fixed Fixed::operator--(int) {
+    Fixed tmp(*this);
+    this->_value--;
+	return tmp;
+}
+
 
 // min && min cost && max && max const
 
