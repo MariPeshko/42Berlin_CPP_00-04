@@ -93,6 +93,7 @@ Fixed Fixed::operator-(const Fixed& rhs) const {
 }
 
 Fixed Fixed::operator*(const Fixed& rhs) const {
+	std::cout << "operator* " << std::endl;
 	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
