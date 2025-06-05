@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:05:25 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 23:32:09 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/05 22:43:38 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ different messages.
 When a ScavTrap is created, the program starts by constructing a ClapTrap. 
 Destruction occurs in reverse order. ScavTrap will use the attributes 
 of ClapTrap (update ClapTrap accordingly).
-
-Hit points (100), representing the health of the ClapTrap.
 
 */
 
