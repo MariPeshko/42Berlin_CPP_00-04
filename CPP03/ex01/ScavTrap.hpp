@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:05:25 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 18:51:41 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/05 21:59:31 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,33 @@ public:
 	ScavTrap &	operator=( ScavTrap const & assign );	
     ~ScavTrap( void );	
 
-	void	attack(const std::string& target);				
+	void	attack(const std::string& target);
+	void	guardGate();		
 
-private:
-	std::string _name;
-	int			_hit_points;
-	int			_energy_points;
-	int			_attack_damage;
+
 
 };
 
 std::ostream &	operator<<(std::ostream &o, ScavTrap const &i);
 
 #endif
+
+
+/** NOTES:
+ * 
+ * Firstly I have in a child class all private attributes
+ * 
+ * private:
+	std::string _name;
+	int			_hit_points;
+	int			_energy_points;
+	int			_attack_damage;
+ * 
+ * Fields probably belong to the base class ClapTrap, and they are 
+ * private in ClapTrap, so ScavTrap ends up redeclaring its 
+ * own versions of these variables instead of modifying the 
+ * base class's versions.
+ * 
+ * Solution: protected: instead of private in parent
+ * ClapTrap header.
+*/

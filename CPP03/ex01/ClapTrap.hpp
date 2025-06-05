@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:26 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 18:06:27 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/05 22:00:07 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);					
 
-private:
+protected:
 	std::string _name;
 	int			_hit_points;
 	int			_energy_points;
@@ -45,3 +45,8 @@ private:
 std::ostream &	operator<<(std::ostream &o, ClapTrap const &i);
 
 #endif
+
+/**
+ * protected instead of private for govong access
+ * to a derived class
+*/
