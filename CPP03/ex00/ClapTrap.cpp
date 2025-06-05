@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/05 18:05:37 by mpeshko           #+#    #+#             */
+/*   Updated: 2025/06/05 18:05:42 by mpeshko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "ClapTrap.hpp"
 
@@ -8,7 +20,7 @@ ClapTrap::ClapTrap( void ) :
     _energy_points(10),
     _attack_damage(0)
 {
-	std::cout << "Parametric Constructor Called" << std::endl;
+	std::cout << "Default Constructor Called" << std::endl;
 	return;
 }
 
@@ -24,16 +36,6 @@ ClapTrap::ClapTrap( const std::string &name ) :
     std::cout << "ClapTrap " << getName() << " is instanciated\n";
     return;       }
 
-// Full Parametric constructor
-/* ClapTrap::ClapTrap(const std::string &name, int const health, int const energy, int const damage) : 
-    _name(name),
-    _hit_points(health),
-    _energy_points(energy),
-    _attack_damage(damage)
-{
-    // The object _name was instanciated
-    // Hit points: Energy points: Attack damage:
-} */
 
 // Copy Constructor
 ClapTrap::ClapTrap( ClapTrap const & src ) : 
@@ -46,12 +48,18 @@ ClapTrap::ClapTrap( ClapTrap const & src ) :
 	std::cout << "Copy Constructor Called" << std::endl;
 }
 
+
 // Assignment operator 
-ClapTrap &	ClapTrap::operator=( ClapTrap const & rhs ) {
+ClapTrap &	ClapTrap::operator=( ClapTrap const &assign ) {
 	
-   /*  if (this != &rhs) {
-        this->_value = rhs.getRawBits(); // fix
-    } */
+	std::cout << "Assignment operator Called" << std::endl;
+	if (this != &assign) {
+		this->_name = assign.getName();
+		this->_hit_points = assign.getHitPoints();
+		this->_energy_points = assign.getEnergyPoints();
+		this->_attack_damage = assign.getDamage();
+
+	}
     return *this;
 }
 
