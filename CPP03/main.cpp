@@ -3,22 +3,53 @@
 
 int	main ( void ) {
 
+	int i = 1;
 	ClapTrap a("Vadym");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
-	a.attack("target");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	
+	std::cout << "ClapTrap " << a.getName() << " is trying to REPAIR" << std::endl;
+	a.beRepaired(1);
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+//10 energy is 0 
 
-//11
-	a.attack("target");
-//12
-	a.attack("target");
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+//11 energy is 0 
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << i++ << " attack:\n";
+	a.attack("itself");
+
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	std::cout << "ClapTrap " << a.getName() << " is trying to REPAIR" << std::endl;
+	a.beRepaired(1);
 
 	return 0;
 }

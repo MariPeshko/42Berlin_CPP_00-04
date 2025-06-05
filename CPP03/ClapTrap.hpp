@@ -16,8 +16,9 @@ public:
     ~ClapTrap( void );	
 
 	const std::string&	getName() const;
-	const int			getEnergyPoint() const;
-	const int			getHitPoints() const;
+	const int					getEnergyPoints() const;
+	const int					getHitPoints() const;
+	const int					getDamage() const;
 	void				attack(const std::string& target);
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);					
