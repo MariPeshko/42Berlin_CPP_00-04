@@ -6,11 +6,12 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:26:20 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 13:35:19 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "ScavTrap.hpp"
 
 // correct instansiation
@@ -36,12 +37,7 @@ ScavTrap::ScavTrap( const std::string &name ) : ClapTrap(name)
 // Copy Constructor
 ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap(src)
 {
-    _name = src.getName();
-	_hit_points = src.getHitPoints();
-	_energy_points = src.getEnergyPoints();
-	_attack_damage = src.getDamage();
 	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
-
 }
 
 // Assignment operator 
@@ -64,23 +60,7 @@ ScavTrap::~ScavTrap() {
     return;
 }
 
-std::ostream &	operator<<(std::ostream &o, ScavTrap const &i) {
-
-    std::cout << "<|°_°|> ";
-    o << i.getName();
-    return o;
-
-}
-
-
-
-/* getName(), getEnergyPoints(), getHitPoints(), 
-getDamage() are inherited from ClapTrap */
-/* takeDamage() and beRepaired() are also inherited */
-
-
-
-/* inherited member function */
+/* attack() method is overridden */
 void    ScavTrap::attack(const std::string& target) {
 
 	if (this->_energy_points <= 0 && this->_hit_points <= 0) {
@@ -113,7 +93,9 @@ void    ScavTrap::attack(const std::string& target) {
 }
 
 void	ScavTrap::guardGate() {
+    
     std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
+
 }		
 
 //first wrong version of Constructors

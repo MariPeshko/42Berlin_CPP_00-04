@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:33 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 22:31:11 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 13:01:50 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int	main ( void ) {
 	std::cout << "Default Energy         " << scav_a.getEnergyPoints() << std::endl;
 	std::cout << "Default Hit Points     " << scav_a.getHitPoints() << std::endl;
 
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	{
+		ScavTrap copy(scav_a);
+		std::cout << copy << std::endl;
+	} // a nested scope, when this block ends, destructor is called automatically
+	
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	clap_a.attack("Maryna");
 	scav_a.takeDamage(5);
@@ -54,7 +60,6 @@ int	main ( void ) {
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	clap_a.attack("scavTrap"); 	
 	
-
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	return 0;
 }

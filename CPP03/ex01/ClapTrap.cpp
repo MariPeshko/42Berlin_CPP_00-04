@@ -6,13 +6,14 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:09 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:26:11 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 12:49:10 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
+// Default Constructor
 ClapTrap::ClapTrap( void ) :
 
     _name("Default"),
@@ -24,7 +25,7 @@ ClapTrap::ClapTrap( void ) :
 	return;
 }
 
-// Main constructor
+// Parametric constructor
 ClapTrap::ClapTrap( const std::string &name ) :
 
     _name(name),
@@ -62,6 +63,7 @@ ClapTrap &	ClapTrap::operator=( ClapTrap const &assign ) {
     return *this;
 }
 
+// Destructor
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap Destructor Called: ";
 	std::cout << "ClapTrap " << this->getName() << " was desctructed." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:26 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 22:00:07 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 12:40:10 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 # define CLAP_TRAP_H
 
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {
 
 public:
+	// Canonical form
     ClapTrap( void );
 	ClapTrap( const std::string &name );
 	ClapTrap( ClapTrap const & src );	
@@ -38,7 +40,6 @@ protected:
 	int			_hit_points;
 	int			_energy_points;
 	int			_attack_damage;
-
 
 };
 

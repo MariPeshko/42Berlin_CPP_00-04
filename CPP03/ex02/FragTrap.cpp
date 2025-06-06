@@ -6,11 +6,12 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:26:18 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 13:35:55 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap( void ) : ClapTrap("Default")
@@ -34,12 +35,7 @@ FragTrap::FragTrap( const std::string &name ) : ClapTrap(name)
 // Copy Constructor
 FragTrap::FragTrap( FragTrap const & src ) : ClapTrap(src)
 {
-    _name = src.getName();
-	_hit_points = src.getHitPoints();
-	_energy_points = src.getEnergyPoints();
-	_attack_damage = src.getDamage();
 	std::cout << "FragTrap Copy Constructor Called" << std::endl;
-
 }
 
 // Assignment operator 
@@ -62,21 +58,12 @@ FragTrap::~FragTrap() {
     return;
 }
 
-std::ostream &	operator<<(std::ostream &o, FragTrap const &i) {
-
-    std::cout << "<<|°_°|>> ";
-    o << i.getName();
-    return o;
-
-}
-
 /* getName(), getEnergyPoints(), getHitPoints(), 
 getDamage() are inherited from ClapTrap */
 /* takeDamage() and beRepaired() are also inherited */
 
 
-
-/* inherited member function */
+/* attack() method is overridden */
 void    FragTrap::attack(const std::string& target) {
 
 	if (this->_energy_points <= 0 && this->_hit_points <= 0) {
@@ -110,7 +97,6 @@ void    FragTrap::attack(const std::string& target) {
 void	FragTrap::highFivesGuys(void) {
     std::cout << *this << " says: \"Gimme five, ScavTrap bro!\"" << std::endl;
 }
-
 
 //first wrong version of Constructors
 /* FragTrap::FragTrap( void ) :

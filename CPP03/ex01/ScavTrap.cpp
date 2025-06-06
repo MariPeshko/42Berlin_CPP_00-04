@@ -6,15 +6,16 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:26:14 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 13:48:11 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-// correct instansiation
-ScavTrap::ScavTrap( void ) : ClapTrap("Default")
+// Default Constructor
+ScavTrap::ScavTrap( void )
+    : ClapTrap()
 {
 	std::cout << "ScavTrap Default Constructor Called" << std::endl;
     _hit_points = 100;
@@ -23,8 +24,9 @@ ScavTrap::ScavTrap( void ) : ClapTrap("Default")
 	return;
 }
 
-// Main constructor
-ScavTrap::ScavTrap( const std::string &name ) : ClapTrap(name)
+// Parametric Constructor
+ScavTrap::ScavTrap( const std::string &name )
+    : ClapTrap(name)
 {
 	std::cout << "ScavTrap Parametric Constructor Called" << std::endl;
     _hit_points = 100;
@@ -34,14 +36,11 @@ ScavTrap::ScavTrap( const std::string &name ) : ClapTrap(name)
 }
 
 // Copy Constructor
-ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap(src)
+// The base copy constructor copies all these members.
+ScavTrap::ScavTrap( ScavTrap const & src )
+    : ClapTrap(src)
 {
-    _name = src.getName();
-	_hit_points = src.getHitPoints();
-	_energy_points = src.getEnergyPoints();
-	_attack_damage = src.getDamage();
 	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
-
 }
 
 // Assignment operator 
@@ -64,23 +63,19 @@ ScavTrap::~ScavTrap() {
     return;
 }
 
-std::ostream &	operator<<(std::ostream &o, ScavTrap const &i) {
+/*
+INHERITED FUNCTIONS :
 
-    std::cout << "<|°_°|> ";
-    o << i.getName();
-    return o;
+std::ostream &	operator<< is inherited
 
-}
+getName(), getEnergyPoints(), getHitPoints(), 
+getDamage() are inherited from ClapTrap
 
-
-
-/* getName(), getEnergyPoints(), getHitPoints(), 
-getDamage() are inherited from ClapTrap */
-/* takeDamage() and beRepaired() are also inherited */
+takeDamage() and beRepaired() are also inherited
+*/
 
 
-
-/* inherited member function */
+/* attack() method is overridden function */
 void    ScavTrap::attack(const std::string& target) {
 
 	if (this->_energy_points <= 0 && this->_hit_points <= 0) {
@@ -113,7 +108,9 @@ void    ScavTrap::attack(const std::string& target) {
 }
 
 void	ScavTrap::guardGate() {
+    
     std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
+
 }		
 
 //first wrong version of Constructors

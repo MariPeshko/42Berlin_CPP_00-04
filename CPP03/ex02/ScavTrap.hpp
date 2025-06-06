@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:05:25 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 22:43:38 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 13:48:43 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCAV_TRAP_H
 
 #include <iostream>
+#include <string>
 #include "ClapTrap.hpp"
 
 /* 
@@ -37,23 +38,22 @@ class ScavTrap : public ClapTrap
 {
 
 public:
+	// Canonical form
     ScavTrap( void );
 	ScavTrap( const std::string &name );
 	ScavTrap( ScavTrap const & src );	
 	ScavTrap &	operator=( ScavTrap const & assign );	
     ~ScavTrap( void );	
 
+	/* attack() method is overridden function */
 	void	attack(const std::string& target);
+
+	//special ability
 	void	guardGate();		
-
-
 
 };
 
-std::ostream &	operator<<(std::ostream &o, ScavTrap const &i);
-
 #endif
-
 
 /** NOTES:
  * 

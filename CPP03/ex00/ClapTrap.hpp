@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:05:49 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 18:05:53 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 12:40:19 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 # define CLAP_TRAP_H
 
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {
 
 public:
+	// Canonical form
     ClapTrap( void );
 	ClapTrap( const std::string &name );
 	ClapTrap( ClapTrap const & src );	
