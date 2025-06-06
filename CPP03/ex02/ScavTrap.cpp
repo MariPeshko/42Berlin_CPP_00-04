@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 13:35:19 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 16:55:33 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ ScavTrap &	ScavTrap::operator=( ScavTrap const &assign ) {
     return *this;
 }
 
+// Destructor
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap Destructor Called: ";
 	std::cout << "ScavTrap " << this->getName();

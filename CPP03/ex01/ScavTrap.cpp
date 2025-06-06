@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 13:48:11 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 19:45:28 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,17 @@ ScavTrap::ScavTrap( const std::string &name )
     _attack_damage = 20;
     return;
 }
+
+/// VERSION 2 - KATYA
+/* ScavTrap::ScavTrap( const std::string &name )
+{
+    _name = name;
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 20;
+	std::cout << "ScavTrap Parametric Constructor Called" << std::endl;
+    std::cout << this->_name << " is instanciated\n";
+}  */
 
 // Copy Constructor
 // The base copy constructor copies all these members.

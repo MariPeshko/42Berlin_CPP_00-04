@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:05:58 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/05 18:05:59 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 16:53:27 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	main ( void ) {
 	int i = 1;
 	ClapTrap a("Vadym");
 
-	ClapTrap b;
-	b = a;
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	std::cout << i++ << " attack:\n";
 	a.attack("itself");

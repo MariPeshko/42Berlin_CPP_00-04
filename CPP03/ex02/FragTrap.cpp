@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:40 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 13:35:55 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 16:55:24 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ FragTrap &	FragTrap::operator=( FragTrap const &assign ) {
     return *this;
 }
 
+// Destructor
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap Destructor Called: ";
 	std::cout << "FragTrap " << this->getName();

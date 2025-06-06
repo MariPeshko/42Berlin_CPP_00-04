@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:09 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:26:16 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/06 16:55:15 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ ClapTrap &	ClapTrap::operator=( ClapTrap const &assign ) {
     return *this;
 }
 
+// Destructor
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap Destructor Called: ";
 	std::cout << "ClapTrap " << this->getName() << " was desctructed." << std::endl;
@@ -155,5 +156,3 @@ void    ClapTrap::beRepaired(unsigned int amount) {
 	this->_hit_points += amount;
     std::cout << "Hit points of " << getName() << " is " << getHitPoints() << std::endl;
 }
-
-
