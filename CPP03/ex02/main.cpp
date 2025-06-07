@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:33 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 00:28:32 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/07 21:29:41 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 int	main ( void ) {
 
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	ClapTrap clap_a("Vadym");
 	std::cout << "Name of new obj is:  " << clap_a << std::endl;
 	std::cout << "Default Damage         " << clap_a.getDamage() << std::endl;
@@ -51,6 +52,7 @@ int	main ( void ) {
 	
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	return 0;
+	
 }
 
 /*
