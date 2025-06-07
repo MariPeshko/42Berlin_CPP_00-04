@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:05:46 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/07 23:49:14 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ public:
 	Animal( const std::string &name );
 	Animal( Animal const & src );	
 	Animal &	operator=( Animal const & assign );	
-    virtual ~Animal( void );	
+    virtual ~Animal( void ); // dynamic binding for the destructor
 
 	const std::string&	getType() const;
 
 	// virtual
 	virtual void		makeSound() const;
+	//void		makeSound() const;
+
 
 protected:
 	std::string	type;
