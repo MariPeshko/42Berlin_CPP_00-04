@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:56:18 by mpeshko          ###   ########.fr       */
+/*   Created: 2025/06/08 13:41:26 by mpeshko           #+#    #+#             */
+/*   Updated: 2025/06/09 00:20:18 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef BRAIN_H
+# define BRAIN_H
 
 #include <iostream>
 #include <string>
 
-class	Animal
+class Brain
 {
 
 public:
 	// Canonical form
-    Animal( void );
-	Animal( const std::string &name );
-	Animal( Animal const & src );	
-	Animal &	operator=( Animal const & assign );	
-    virtual ~Animal( void ); // dynamic binding for the destructor
+    Brain( void );
+	Brain( const std::string &name );
+	Brain( Brain const & src );	
+	Brain &	operator=( Brain const & assign );	
+    ~Brain( void );	
 
-	const std::string&	getType() const;
+	static std::size_t	size( void );
+	void				setFirstIdea(std::string idea);
+	std::string const	getFirstIdea( void ) const;
 
-	// virtual
-	virtual void		makeSound() const;
-
-
-protected:
-	std::string	type;
-
+private:
+	std::string			ideas[100];
+	
 };
-
-std::ostream &	operator<<(std::ostream &o, Animal const &i);
 
 #endif
 
-/**
-
-*/
+/** NOTES
+ * 
+ * Objects of class type that we do not explicitly initialize 
+ * have a value that is defined by the class.
+ */

@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:56:18 by mpeshko          ###   ########.fr       */
+/*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
+/*   Updated: 2025/06/09 00:52:41 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef CAT_H
+# define CAT_H
 
 #include <iostream>
 #include <string>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class	Animal
+class Cat : public AAnimal
 {
 
 public:
 	// Canonical form
-    Animal( void );
-	Animal( const std::string &name );
-	Animal( Animal const & src );	
-	Animal &	operator=( Animal const & assign );	
-    virtual ~Animal( void ); // dynamic binding for the destructor
+    Cat( void );
+	Cat( const std::string &name );
+	Cat( Cat const & src );	
+	Cat &	operator=( Cat const & assign );	
+    ~Cat( void );	
+	
+	/* method is overridden */
+	void	makeSound( void ) const;
+	// test of a deep copy
+	void				setIdea(std::string idea);
+	std::string const	getIdea(void) const;
 
-	const std::string&	getType() const;
-
-	// virtual
-	virtual void		makeSound() const;
-
-
-protected:
-	std::string	type;
-
+private:
+	Brain	*CatBrain;
+	
 };
-
-std::ostream &	operator<<(std::ostream &o, Animal const &i);
 
 #endif
 
-/**
-
-*/

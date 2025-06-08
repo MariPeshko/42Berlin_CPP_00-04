@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:39:18 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:49:04 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Brain.hpp"
-
-static void	test_0(void);
-static void	test_1(void);
 
 int	main ( void ) {
 
