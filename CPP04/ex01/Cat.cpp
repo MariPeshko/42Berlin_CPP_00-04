@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 14:57:53 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:09:14 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,28 @@ Cat::Cat( void )
 	std::cout << "Cat Default Constructor Called" << std::endl;
 }
 
-// TAAAAAAAAAAAASK to copy a BRAIN
-// Copy Constructor
-Cat::Cat( Cat const & src )
-    : Animal(src)
+// Copy Constructor. Deep copy
+Cat::Cat( Cat const & src ) :
+	Animal(src),
+	CatBrain(new Brain(*src.CatBrain))
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
 }
 
-// TAAAAAAAAAAAaASK to delete the old brain and to deep copy the new brain
-// Assignment operator 
+// Assignment operator. Deep copy
 Cat &	Cat::operator=( Cat const &assign ) {
 	
 	std::cout << "Cat Assignment operator Called" << std::endl;
 	if (this != &assign) {
 		this->type = assign.getType();
+		delete CatBrain;
+		CatBrain = new Brain(*assign.CatBrain);
 	}
     return *this;
 }
 
 Cat::~Cat() {
+	delete CatBrain;
 	std::cout << "Cat Destructor Called" << std::endl;
 }
 

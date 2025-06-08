@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:42 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:45:35 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:24:31 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ public:
     ~Dog( void );	
 
 	/* method is overridden */
-	void	makeSound( void ) const;
+	void				makeSound( void ) const;
+	void				setIdea(std::string idea);
+	std::string const	getIdea(void) const;
+
 
 private:
 	Brain	*DogBrain;

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:41:18 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 15:24:23 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:18:15 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,20 @@ std::size_t Brain::size( void ) {
     return sizeof(ideas) / sizeof(ideas[0]);
 	
 }
+
+void    Brain::setFirstIdea(std::string idea) {
+
+    this->ideas[0] = idea;
+
+}
+
+std::string const Brain::getFirstIdea( void ) const {
+
+    return this->ideas[0];
+    
+}
+
+
 
 /**
  * Notes
