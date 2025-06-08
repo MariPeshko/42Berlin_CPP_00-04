@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:24:27 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:32:37 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,3 @@ std::string const	Dog::getIdea(void) const {
 	return this->DogBrain->getFirstIdea();
 
 }
-
-
-

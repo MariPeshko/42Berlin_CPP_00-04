@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:09:14 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:33:18 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,17 @@ Cat::~Cat() {
 /* method is overridden */
 void	Cat::makeSound( void ) const {
 	std::cout << "Meow meow me-e-eow";
+}
+
+void	Cat::setIdea(std::string idea) {
+
+	this->CatBrain->setFirstIdea(idea);
+	
+}
+
+std::string const	Cat::getIdea(void) const {
+
+	return this->CatBrain->getFirstIdea();
+
 }
 

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 14:54:32 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 00:32:24 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ public:
 	
 	/* method is overridden */
 	void	makeSound( void ) const;
+	// test of a deep copy
+	void				setIdea(std::string idea);
+	std::string const	getIdea(void) const;
 
 private:
 	Brain	*CatBrain;
@@ -39,7 +42,3 @@ private:
 
 #endif
 
-
-/** NOTES:
- * 
-*/
