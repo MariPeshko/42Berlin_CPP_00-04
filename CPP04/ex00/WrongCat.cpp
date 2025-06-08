@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:04:29 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/08 13:14:39 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,3 @@ WrongCat::~WrongCat() {
 void	WrongCat::makeSound( void ) const {
 	std::cout << "Meow meow me-e-eow";
 }
-
-
-
-
-

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:09:55 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/08 13:13:57 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cat &	Cat::operator=( Cat const &assign ) {
 }
 
 Cat::~Cat() {
-	std::cout << "Cat Destructor Called: " << std::endl;
+	std::cout << "Cat Destructor Called" << std::endl;
 }
 
 /* method is overridden */

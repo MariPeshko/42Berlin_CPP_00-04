@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:45:14 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/08 13:12:43 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void	test_1(void);
 
 int	main ( void ) {
 
-	// test_0();
-	// test_1();
+	test_0();
+	test_1();
 
 	return 0;
 	
