@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:49:26 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:59:36 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 #include <string>
 #include "Animal.hpp"
 
-/* 
-
-*/
 
 class Cat : public Animal
 {
@@ -27,7 +24,6 @@ class Cat : public Animal
 public:
 	// Canonical form
     Cat( void );
-	Cat( const std::string &name );
 	Cat( Cat const & src );	
 	Cat &	operator=( Cat const & assign );	
     ~Cat( void );	
@@ -38,8 +34,3 @@ public:
 };
 
 #endif
-
-
-/** NOTES:
- * 
-*/

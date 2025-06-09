@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:14:33 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:59:04 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class WrongCat : public WrongAnimal
 public:
 	// Canonical form
     WrongCat( void );
-	WrongCat( const std::string &name );
 	WrongCat( WrongCat const & src );	
 	WrongCat &	operator=( WrongCat const & assign );	
     ~WrongCat( void );	

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 23:09:40 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:50:27 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "Dog.hpp"
 
 // Default Constructor
-Dog::Dog( void )
-    : Animal("Dog")
+Dog::Dog( void ) // explicitly calls the constructor of its base class
+    : Animal("Dog") 
 {
 	std::cout << "Dog Default Constructor Called" << std::endl;
 }

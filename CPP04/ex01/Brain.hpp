@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:41:26 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:20:18 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:00:01 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Brain
 public:
 	// Canonical form
     Brain( void );
-	Brain( const std::string &name );
 	Brain( Brain const & src );	
 	Brain &	operator=( Brain const & assign );	
     ~Brain( void );	

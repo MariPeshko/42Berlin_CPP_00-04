@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:42 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/07 22:59:31 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:59:25 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Dog : public Animal
 public:
 	// Canonical form
     Dog( void );
-	Dog( const std::string &name );
 	Dog( Dog const & src );	
 	Dog &	operator=( Dog const & assign );	
     ~Dog( void );	

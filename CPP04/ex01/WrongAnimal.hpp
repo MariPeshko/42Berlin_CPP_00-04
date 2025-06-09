@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:14:48 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:02:26 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ public:
     virtual ~WrongAnimal( void );	// dynamic binding for the destructor
 
 	const std::string&	getType() const;
-
 	void				makeSound() const;
 
 protected:

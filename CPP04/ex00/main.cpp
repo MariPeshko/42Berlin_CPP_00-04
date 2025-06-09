@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:12:43 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:57:47 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	test_1(void) {
 	
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	
-		const WrongAnimal* lulu = new WrongCat();
+	const WrongAnimal* lulu = new WrongCat();
 	std::cout << lulu->getType() << " " << std::endl;
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	std::cout << "WrongCat says : \"";

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:14:39 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:58:10 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ WrongCat::~WrongCat() {
 
 /* method is overridden function */
 void	WrongCat::makeSound( void ) const {
+	
 	std::cout << "Meow meow me-e-eow";
+	
 }

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 01:01:24 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:02:33 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ public:
     virtual ~AAnimal( void );
 
 	const std::string&	getType() const;
-
 	// Pure virtual function
 	virtual void		makeSound() const = 0;
 

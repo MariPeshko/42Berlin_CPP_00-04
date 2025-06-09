@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:13:57 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:56:44 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // Default Constructor
 Cat::Cat( void )
-    : Animal("Cat")
+    : Animal("Cat") // explicitly calls the constructor of its base class
 {
 	std::cout << "Cat Default Constructor Called" << std::endl;
 }
@@ -38,7 +38,9 @@ Cat &	Cat::operator=( Cat const &assign ) {
 }
 
 Cat::~Cat() {
+	
 	std::cout << "Cat Destructor Called" << std::endl;
+	
 }
 
 /* method is overridden */

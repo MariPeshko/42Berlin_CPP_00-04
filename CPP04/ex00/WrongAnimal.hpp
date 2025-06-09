@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/08 13:14:48 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 11:58:29 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	void				makeSound() const;
 
 protected:
-	std::string	type;
+	std::string			type;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:32:24 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:00:28 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Cat : public Animal
 public:
 	// Canonical form
     Cat( void );
-	Cat( const std::string &name );
 	Cat( Cat const & src );	
 	Cat &	operator=( Cat const & assign );	
     ~Cat( void );	
