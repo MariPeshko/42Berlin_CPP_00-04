@@ -1,6 +1,13 @@
 #include <iostream>
 #include "Fixed.hpp"
 
+//In C++98, a static const int member must be initialized outside 
+//the class definition (i.e., in the .cpp file), even though 
+//it's declared inside the class.
+/* When we define a static member outside the
+class, we do not repeat the static keyword. */
+const int	Fixed::_fractbits = 8;
+
 Fixed::Fixed( void ) : _value(0) {
     std::cout << "Default Constructor Called" << std::endl;
     return;
@@ -9,7 +16,6 @@ Fixed::Fixed( void ) : _value(0) {
 Fixed::Fixed(int const n) : _value( n ) {
 
     std::cout << "Parametric Constuctor" << std::endl;
-    //return;
 }
 
 // C++ Primer Book version

@@ -2,6 +2,8 @@
 #include <cmath>
 #include "Fixed.hpp"
 
+const int	Fixed::_fractbits = 8;
+
 Fixed::Fixed( void ) : _value(0) {
     return;
 }

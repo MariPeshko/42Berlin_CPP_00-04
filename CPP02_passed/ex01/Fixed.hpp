@@ -24,7 +24,7 @@ public:
 
 private:
     int		_value;
-	static const int	_fractbits = 8; // fractional bits
+	static const int	_fractbits; // fractional bits
 
 };
 

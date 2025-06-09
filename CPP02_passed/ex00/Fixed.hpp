@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/10 00:03:43 by mpeshko           #+#    #+#             */
+/*   Updated: 2025/06/10 00:10:57 by mpeshko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_H
 # define FIXED_H
 
@@ -21,7 +33,12 @@ public:
 
 private:
     int		_value;
-	static const int	_fractbits = 8; // fractional bits
+	//In C++98, a static const int member must be initialized outside 
+	//the class definition (i.e., in the .cpp file), even though 
+	//it's declared inside the class.
+	/* The static keyword, however, is used only on 
+	the declaration inside the class body */
+	static const int	_fractbits; // fractional bits
 
 };
 
