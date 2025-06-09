@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:27:00 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 12:00:28 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:55:41 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
 	// test of a deep copy
 	void				setIdea(std::string idea);
 	std::string const	getIdea(void) const;
+	Brain*				getAddress() const;
 
 private:
 	Brain	*CatBrain;

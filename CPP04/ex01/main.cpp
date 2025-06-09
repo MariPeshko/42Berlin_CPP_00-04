@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 12:11:57 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 12:56:39 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,18 @@ int	main ( void ) {
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std::endl;
 	std::cout << "Destructors:\n" << std::endl;
 	}
+
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std:: endl;
+	std::cout << "_ _ _ _ _ _ _ _ _ _test Brain adresses_ _ _ _ _ _" << std::endl;
+	
+	Dog orj;
+	std::cout << "orj brain: " << orj.getAddress() << std::endl;
+	{
+		Dog tmp = orj;
+		std::cout << "tmp brain: " << tmp.getAddress() << std::endl;
+	}
+	std::cout << "orj brain: " << orj.getAddress() << std::endl;
+	
 	return 0;
 }
 
