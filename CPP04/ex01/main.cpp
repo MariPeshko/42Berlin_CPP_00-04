@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 12:56:39 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 13:28:13 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ int	main ( void ) {
 	Cat *cat1 = new Cat();
 	cat1->setIdea("I am Maine Coon");
 	std::cout << cat1->getIdea() << std::endl;
-	Cat cat2 = *cat1;
+	Cat cat2;
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std::endl;
+	cat2 = *cat1;
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std::endl;
 	delete cat1;
 	std::cout << cat2.getIdea() << std::endl;
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std::endl;
@@ -61,7 +64,8 @@ int	main ( void ) {
 
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std:: endl;
 	std::cout << "_ _ _ _ _ _ _ _ _ _test Brain adresses_ _ _ _ _ _" << std::endl;
-	
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n" << std:: endl;
+
 	Dog orj;
 	std::cout << "orj brain: " << orj.getAddress() << std::endl;
 	{

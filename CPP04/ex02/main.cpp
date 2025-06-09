@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:50 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 12:13:18 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/06/09 13:10:49 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	main ( void ) {
 	// the default AAnimal class should not be instantiable
 	
 	/* const AAnimal* ab_animal = new AAnimal();
-	delete ab_animal; */
+	delete ab_animal;
+	
+	AAnimal bla;
+	*/
 
 	const AAnimal* Karma = new Dog();
 	const AAnimal* Tropy = new Cat();

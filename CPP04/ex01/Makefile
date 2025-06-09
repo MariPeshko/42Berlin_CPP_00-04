@@ -1,6 +1,8 @@
 NAME = animals
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS =	main.cpp Animal.cpp Dog.cpp Cat.cpp \
+		WrongAnimal.cpp WrongCat.cpp Brain.cpp
+
 OBJ_DIR=obj/
 OBJS=$(SRCS:%.cpp=$(OBJ_DIR)%.o)
 
