@@ -4,9 +4,26 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
             "type": "shell",
-            "command": "echo Hello"
+            "label": "C/C++ clang++ built active file",
+            "command": "/usr/bin/c++",
+            "args": [
+                "-std=c++98",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+            "problemMatcher": [
+				"$gcc"
+			],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

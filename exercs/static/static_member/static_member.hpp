@@ -1,7 +1,7 @@
 #include <iostream>
 
 #ifndef STATIC_MEMBER_H
-#define STATIC_MEMBER_H
+# define STATIC_MEMBER_H
 
 class MyClass {
     public:
