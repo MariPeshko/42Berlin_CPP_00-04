@@ -18,7 +18,7 @@ int MyClass::staticValue = 42;
 
 int main() {
     // call without a name of the object
-    // caus ewe don't need to instanciate an object
+    // cause we don't need to instanciate an object
     MyClass::staticFunction(); // Call without object
     MyClass::staticValue = 99;
     MyClass::staticFunction();
