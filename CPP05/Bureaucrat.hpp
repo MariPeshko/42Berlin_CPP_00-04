@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:40:36 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/06 20:20:17 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/07 22:10:18 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,33 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
+#include <exception>
 
 class	Bureaucrat {
 	
 	public:
-		// Constructor
-		Bureaucrat();
-		Bureaucrat(int grade);
-		// Copy Constructor
+		Bureaucrat( void );
+		Bureaucrat(int grade, std::string name);
 		Bureaucrat (Bureaucrat const & src);
-		// Copy Assignment operator
 		Bureaucrat &	operator=( Bureaucrat const &assign );
-		// Destractor
 		~Bureaucrat();
 
-		getGrade();
-		const getName();
+		unsigned int		getGrade() const;
+		const std::string&	getName() const;
+		void				upgrade();
+		void				downgrade();
+
+		// override the what() method
+		class GradeTooHighException : public std::exception { 
+			public:
+				const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+
 		// You must also implement two member functions 
 		// to increment or decrement the bureaucrat’s grade.
 		// If the grade goes out of range, both functions 
@@ -43,15 +54,8 @@ class	Bureaucrat {
 		const std::string	_name;
 		int					_grade;
 
-}
+};
 
-/*
-You must implement an overload of the insertion («) operator 
-to print output in the following format (without the angle brackets):
-<name>, bureaucrat grade <grade>.
-
-std::ostream &	operator<<(std::ostream &o, Fixed const &i);
-
-*/
+std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i);
 
 #endif
