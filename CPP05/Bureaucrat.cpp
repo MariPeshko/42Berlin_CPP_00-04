@@ -48,23 +48,26 @@ std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
 }
 
 void	Bureaucrat::upgrade() {
-	if(this->_grade > 1)
+		this->Except(this->_grade - 1);
 		this->_grade--;
-	else
-		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::downgrade() {
-	if(this->_grade < 149)
+		this->Except(this->_grade + 1);
 		this->_grade++;
-	else
+}
+
+void	Bureaucrat::Except( const int newgrade ) {
+	if(newgrade - 1 < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if(newgrade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Exception. Grade too high!";
+	return "_ _ _Exception_ _ _ Grade too high!";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw () {
-	return "Exception. Grade too low!";
+	return "_ _ _Exception_ _ _ Grade too low!";
 }

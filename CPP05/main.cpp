@@ -2,15 +2,45 @@
 #include <iostream>
 #include <exception>
 
-int	main(void) {
+static void	testGrade( void ) {
 
 	Bureaucrat	Andrew(150, "Andrew");
 	std::cout << Andrew ;
-	// Bureaucrat Tomas(Andrew);
-	// std::cout << Tomas;
+
+	try {
+		std::cout << "Invalid downgrade" << std::endl;
+		Andrew.downgrade();
+	} catch (const std::exception& e) {
+		std::cerr << "\n" << e.what() << "\n" << std::endl;
+	}
+	std::cout << Andrew << std::endl;
+
+	std::cout << "Valid upgrade" << std::endl;
+	Andrew.upgrade();
+	std::cout << Andrew ;
+
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 
 	Bureaucrat	Patrick(1, "Patrick");
 	std::cout << Patrick ;
+
+	try {
+		std::cout << "Invalid upgrade" << std::endl;
+		Patrick.upgrade();
+	} catch(const std::exception& e) {
+		std::cerr << "\n" << e.what() << "\n" << std::endl;
+	}
+	std::cout << Patrick << std::endl;
+
+	std::cout << "Valid downgrade" << std::endl;
+	Patrick.downgrade();
+	std::cout << Patrick ;
+
+}
+
+int	main(void) {
+
+	testGrade();
 
 	/* std::cout << "Basic upgrade" << std::endl;
 	Andrew.upgrade();
@@ -26,11 +56,6 @@ int	main(void) {
 	std::cout << "Grade too high " << std::endl;
 	Bureaucrat	Emma(0, "Emma"); */
 
-	std::cout << "Invalid downgrade" << std::endl;
-	Andrew.downgrade();
-	std::cout << Andrew ;
-
-
-
+	return 0;
 
 }
