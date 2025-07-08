@@ -27,7 +27,7 @@ static void	testGrade( void ) {
 	try {
 		std::cout << "Invalid upgrade" << std::endl;
 		Patrick.upgrade();
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "\n" << e.what() << "\n" << std::endl;
 	}
 	std::cout << Patrick << std::endl;
@@ -38,23 +38,28 @@ static void	testGrade( void ) {
 
 }
 
+void	testConstructor( void ) {
+
+	try {
+		Bureaucrat Scarlett(151, "Scarlett");
+	} catch (const std::exception& e) {
+		std::cerr << "\n" << e.what() << "\n" << std::endl;
+	}
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	try {
+		Bureaucrat Elsa(0, "Elsa");
+	} catch (const std::exception& e) {
+		std::cerr << "\n" << e.what() << "\n" << std::endl;
+	}
+
+
+}
+
 int	main(void) {
 
 	testGrade();
-
-	/* std::cout << "Basic upgrade" << std::endl;
-	Andrew.upgrade();
-	std::cout << Andrew ;
-
-	std::cout << "Basic downgrade" << std::endl;
-	Patrick.downgrade();
-	std::cout << Patrick ; */
-
-	/* std::cout << "Grade too low " << std::endl;
-	Bureaucrat	John(160, "John");
-
-	std::cout << "Grade too high " << std::endl;
-	Bureaucrat	Emma(0, "Emma"); */
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	testConstructor();
 
 	return 0;
 

@@ -7,14 +7,18 @@ Bureaucrat::Bureaucrat( void ) :
 { };
 
 Bureaucrat::Bureaucrat( int grade, std::string name ) :
-	_grade(grade), _name(name)	
- { 
+	_grade(grade), _name(name)
+{ 
 	if (this->_grade > 150)
+	{
+		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
 		throw Bureaucrat::GradeTooLowException();
-	else if (this->_grade < 1)
+	}
+	else if (this->_grade < 1) {
+		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
 		throw Bureaucrat::GradeTooHighException();
-
- };
+	}
+};
 
 // Copy Constructor
 Bureaucrat::Bureaucrat ( Bureaucrat const & src ) :
@@ -29,7 +33,9 @@ Bureaucrat &	Bureaucrat::operator=( Bureaucrat const &assign ) {
     return *this;
 }
 
-Bureaucrat::~Bureaucrat() { };
+Bureaucrat::~Bureaucrat() {
+	std::cout << "Destructor" << std::endl;
+};
 
 unsigned int Bureaucrat::getGrade() const {
 	return this->_grade;
@@ -48,26 +54,38 @@ std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
 }
 
 void	Bureaucrat::upgrade() {
-		this->Except(this->_grade - 1);
+		if (this->_grade - 1 < 1)
+			throw Bureaucrat::GradeTooHighException();
 		this->_grade--;
 }
 
 void	Bureaucrat::downgrade() {
-		this->Except(this->_grade + 1);
+		if (this->_grade + 1 > 150)
+			throw Bureaucrat::GradeTooLowException();
 		this->_grade++;
+
 }
 
-void	Bureaucrat::Except( const int newgrade ) {
-	if(newgrade - 1 < 1)
-		throw Bureaucrat::GradeTooHighException();
-	if(newgrade + 1 > 150)
-		throw Bureaucrat::GradeTooLowException();
-}
-
+// override the what() method
+// throw() - This is an exception specification (old C++ syntax).
+// It means that this function is guaranteed not to throw any exceptions.
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return "_ _ _Exception_ _ _ Grade too high!";
 }
 
+// override the what() method
+// throw() - This is an exception specification (old C++ syntax).
+// It means that this function is guaranteed not to throw any exceptions.
 const char* Bureaucrat::GradeTooLowException::what() const throw () {
 	return "_ _ _Exception_ _ _ Grade too low!";
 }
+
+/**
+ * Notes
+ * 
+ * Modern C++ (C++11 and later)
+ * Instead of throw(), you should use noexcept:
+ * 
+ * 'const char* what() const noexcept;'
+ * 
+ */
