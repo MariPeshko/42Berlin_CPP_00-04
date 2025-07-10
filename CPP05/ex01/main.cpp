@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:39 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/08 19:53:17 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:29:34 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,67 +15,9 @@
 #include <iostream>
 #include <exception>
 
-static void	testGrade( void ) {
-
-	Bureaucrat	Andrew(150, "Andrew");
-	std::cout << Andrew ;
-
-	try {
-		std::cout << "Invalid downgrade" << std::endl;
-		Andrew.downgrade();
-	} catch (const std::exception& e) {
-		std::cerr << "\n" << e.what() << "\n" << std::endl;
-	}
-	std::cout << Andrew << std::endl;
-
-	std::cout << "Valid upgrade" << std::endl;
-	Andrew.upgrade();
-	std::cout << Andrew ;
-
-	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
-
-	Bureaucrat	Patrick(1, "Patrick");
-	std::cout << Patrick ;
-
-	try {
-		std::cout << "Invalid upgrade" << std::endl;
-		Patrick.upgrade();
-	} catch (const std::exception& e) {
-		std::cerr << "\n" << e.what() << "\n" << std::endl;
-	}
-	std::cout << Patrick << std::endl;
-
-	std::cout << "Valid downgrade" << std::endl;
-	Patrick.downgrade();
-	std::cout << Patrick ;
-
-}
-
-void	testConstructor( void ) {
-
-	try {
-		Bureaucrat Scarlett(151, "Scarlett");
-	} catch (const std::exception& e) {
-		std::cerr << "\n" << e.what() << "\n" << std::endl;
-	}
-	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
-	try {
-		Bureaucrat Elsa(0, "Elsa");
-	} catch (const std::exception& e) {
-		std::cerr << "\n" << e.what() << "\n" << std::endl;
-	}
-
-
-}
-
-int	main(void) {
-
-	//testGrade();
-	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
-	//testConstructor();
-
-
-	/// OCF tests
+static void	test_basic() {
+	{
+	std::cout << "OCF tests" << std::endl;
 	Form Doc1("Doc1", 2, 20);
 	std::cout << Doc1 << std::endl;
 
@@ -87,6 +29,60 @@ int	main(void) {
 
 	Doc3 = Doc1;
 	std::cout << Doc3 << std::endl;
+	}
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	try {
+		Form	TooLowGrade("TooLowGrade", 152, 15);	
+	} catch ( const std::exception &e) {
+		std::cerr << e.what() << std:: endl;
+	}
+	try {
+		Form	TooLowExGrade("TooLowExGrade", 15, 151);	
+	} catch ( const std::exception &e) {
+		std::cerr << e.what() << std:: endl;
+	}  
+	try {
+		Form	TooHighGrade("TooHighGrade", -1, 15);	
+	} catch ( const std::exception &e) {
+		std::cerr << e.what() << std:: endl;
+	}
+	try {
+		Form	TooHighExGrade("TooHighExGrade", 15, -1);	
+	} catch ( const std::exception &e) {
+		std::cerr << e.what() << std:: endl;
+	}
+}
+
+static void test_Form_beSigned() {
+	try {
+		Bureaucrat	Bob(1, "Bob");
+		Form		Anmeldung("Anmeldung", 1, 10);
+		std::cout << Anmeldung << std::endl;
+		Anmeldung.beSigned(Bob);
+		std::cout << Anmeldung << std::endl;	
+	} catch ( std::exception &e ) {
+		std::cerr << e.what() << std:: endl;
+	}
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	try {
+		Bureaucrat	Nicolaus(15, "Nicolaus");
+		Form		Meld("Meldebescheinigung", 14, 10);
+		std::cout << Meld << std::endl;
+		Meld.beSigned(Nicolaus);
+		std::cout << Meld << std::endl;
+	} catch ( std::exception &e ) {
+		std::cerr << e.what() << std:: endl;
+	}
+}
+
+
+int	main(void) {
+	//test_basic();
+	test_Form_beSigned();
+	
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	
+	
 
 	return 0;
 

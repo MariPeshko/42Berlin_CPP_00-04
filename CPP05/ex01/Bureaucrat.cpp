@@ -6,17 +6,19 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/08 19:14:35 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:28:14 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 #include <exception>
 
 Bureaucrat::Bureaucrat( void ) :
 	_grade(75), _name("Default")
 { };
+
 
 Bureaucrat::Bureaucrat( int grade, std::string name ) :
 	_grade(grade), _name(name)
@@ -46,7 +48,7 @@ Bureaucrat &	Bureaucrat::operator=( Bureaucrat const &assign ) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Destructor" << std::endl;
+	std::cout << "Destructor of class type Bureaucrat" << std::endl;
 };
 
 unsigned int Bureaucrat::getGrade() const {
@@ -66,30 +68,43 @@ std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
 }
 
 void	Bureaucrat::upgrade() {
-		if (this->_grade - 1 < 1)
-			throw Bureaucrat::GradeTooHighException();
-		this->_grade--;
+	if (this->_grade - 1 < 1)
+		throw Bureaucrat::GradeTooHighException();
+	this->_grade--;
 }
 
 void	Bureaucrat::downgrade() {
-		if (this->_grade + 1 > 150)
-			throw Bureaucrat::GradeTooLowException();
-		this->_grade++;
-
+	if (this->_grade + 1 > 150)
+		throw Bureaucrat::GradeTooLowException();
+	this->_grade++;
 }
+
+void	Bureaucrat::signForm(Form &f) {
+	if (this->_grade <= f.getGrade()) {
+		std::cout << this->getName() << " signed " << f.getName();
+		std::cout << std::endl;
+	} else {
+		std::cout << this->getName() << " couldn't signed " << f.getName();
+		std::cout << " because " << this->getName() << "\'s grade ";
+		std::cout << "is not high enough." << std::endl;
+	}
+		
+	f.beSigned(*this);
+}
+
 
 // override the what() method
 // throw() - This is an exception specification (old C++ syntax).
 // It means that this function is guaranteed not to throw any exceptions.
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "_ _ _Exception_ _ _ Grade too high!";
+	return "_ _ _Bur Exception_ _ _ Grade too high!";
 }
 
 // override the what() method
 // throw() - This is an exception specification (old C++ syntax).
 // It means that this function is guaranteed not to throw any exceptions.
 const char* Bureaucrat::GradeTooLowException::what() const throw () {
-	return "_ _ _Exception_ _ _ Grade too low!";
+	return "_ _ _Bur Exception_ _ _ Grade too low!";
 }
 
 /**

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:42 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/08 19:52:18 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:14:47 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,16 @@ Form::Form( void ) :
 	_name("DefaultForm"), _signed(false), _formGrade(1), _formGradeExe(10)
 { };
 
+
 Form::Form( std::string name, int grade, int exgrade ) :
-	_name(name), _signed(false), _formGrade(grade), _formGradeExe(10)
-{ 
-	if (this->_formGrade > 150 || this->_formGradeExe > 150)
-	{
-		std::cerr << "On attempt to construct a form object with a grade ";
-		std::cerr << grade << "\n";
+	_name(name), _signed(false), _formGrade(grade), _formGradeExe(exgrade)
+{
+	if (this->_formGrade > 150 || this->_formGradeExe > 150) {
+		std::cerr << "On attempt to construct a form object... \n";
 		throw Form::GradeTooLowException();
 	}
 	else if (this->_formGrade < 1 || this->_formGradeExe < 1) {
-		std::cerr << "On attempt to construct a form object with a grade ";
-		std::cerr << grade << "\n";
+		std::cerr << "On attempt to construct a form object... \n";
 		throw Form::GradeTooHighException();
 	}
 };
@@ -55,7 +53,7 @@ Form &	Form::operator=( Form const &assign ) {
 }
 
 Form::~Form() {
-	std::cout << "Form class type destructor" << std::endl;
+	std::cout << "Destructor of class type Form" << std::endl;
 };
 
 unsigned int Form::getGrade() const {
@@ -80,6 +78,12 @@ bool	Form::getBoolSigned() const {
 	return this->_signed;
 }
 
+void	Form::beSigned(Bureaucrat &b) {
+	if (b.getGrade() <= this->_formGrade)
+		this->_signed = true;
+	else
+		throw Form::GradeTooLowException();
+}
 
 std::ostream &	operator<<(std::ostream &o, Form const &i) {
 
@@ -91,25 +95,12 @@ std::ostream &	operator<<(std::ostream &o, Form const &i) {
 
 }
 
-/* void	Form::upgrade() {
-		if (this->_formGrade - 1 < 1)
-			throw Form::GradeTooHighException();
-		this->_formGrade--;
-}
-
-void	Form::downgrade() {
-		if (this->_formGrade + 1 > 150)
-			throw Form::GradeTooLowException();
-		this->_formGrade++;
-
-} */
-
 const char* Form::GradeTooHighException::what() const throw() {
-	return "_ _ _Exception_ _ _ Grade of this form too high!";
+	return "_ _ _Form Exception_ _ _ Grade is too high!";
 }
 
 const char* Form::GradeTooLowException::what() const throw () {
-	return "_ _ _Exception_ _ _ Grade of this form too low!";
+	return "_ _ _Form Exception_ _ _ Grade is too high!";
 }
 
 /**

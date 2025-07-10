@@ -6,13 +6,14 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:25 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/08 19:44:49 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:14:55 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
@@ -31,8 +32,8 @@ class	Form {
 		const std::string&	getName() const;
 		const std::string	getSigned() const;
 		bool				getBoolSigned() const;
-		//void				upgrade();
-		//void				downgrade();
+
+		void				beSigned(Bureaucrat &b);
 
 		// override the what() method
 		class GradeTooHighException : public std::exception { 
