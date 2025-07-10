@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 22:17:35 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 22:20:42 by mpeshko          ###   ########.fr       */
+/*   Created: 2025/07/06 19:40:36 by mpeshko           #+#    #+#             */
+/*   Updated: 2025/07/10 22:23:15 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
+#include "AForm.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
 
-class Bureaucrat;
-
-class	Form {
+class	Bureaucrat {
 	
 	public:
-		Form( void );
-		Form( std::string name, int grade, int exgrade );
-		Form (Form const & src);
-		Form &	operator=( Form const &assign );
-		~Form();
+		Bureaucrat( void );
+		Bureaucrat(int grade, std::string name);
+		Bureaucrat (Bureaucrat const & src);
+		Bureaucrat &	operator=( Bureaucrat const &assign );
+		~Bureaucrat();
 
 		unsigned int		getGrade() const;
-		unsigned int		getExGrade() const;
 		const std::string&	getName() const;
-		const std::string	getSigned() const;
-		bool				getBoolSigned() const;
+		void				upgrade();
+		void				downgrade();
 
-		void				beSigned(Bureaucrat &b);
+		void				signForm(AForm &f);
 
 		// override the what() method
 		class GradeTooHighException : public std::exception { 
@@ -48,12 +46,10 @@ class	Form {
 
 	private:
 		const std::string	_name;
-		bool				_signed;
-		const int			_formGrade;
-		const int			_formGradeExe;
+		int					_grade;
 
 };
 
-std::ostream &	operator<<(std::ostream &o, Form const &i);
+std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i);
 
 #endif
