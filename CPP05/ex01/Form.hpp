@@ -6,17 +6,18 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:25 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 20:14:55 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:53:19 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
+
+class Bureaucrat;
 
 class	Form {
 	

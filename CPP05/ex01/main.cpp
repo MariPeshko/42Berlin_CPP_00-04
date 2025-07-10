@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:39 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 20:29:34 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:57:43 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,24 @@ static void test_Form_beSigned() {
 
 int	main(void) {
 	//test_basic();
-	test_Form_beSigned();
+	//test_Form_beSigned();
+
+	{
+		Bureaucrat	Bob(1, "Bob");
+		Form		Anmeldung("Anmeldung", 1, 10);
+		Bob.signForm(Anmeldung);
+	}
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	{
+		try {
+			Bureaucrat	Bob(150, "Bob");
+			Form		Anmeldung("Anmeldung", 1, 10);
+			Bob.signForm(Anmeldung);
+		} catch (std::exception &e) {
+			std::cerr << e.what() << std:: endl;
+		}
+		
+	}
 	
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	

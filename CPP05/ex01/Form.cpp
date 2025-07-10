@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:42 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 20:14:47 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:56:42 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ const char* Form::GradeTooHighException::what() const throw() {
 }
 
 const char* Form::GradeTooLowException::what() const throw () {
-	return "_ _ _Form Exception_ _ _ Grade is too high!";
+	return "_ _ _Form Exception_ _ _ Grade is too low!";
 }
 
 /**
