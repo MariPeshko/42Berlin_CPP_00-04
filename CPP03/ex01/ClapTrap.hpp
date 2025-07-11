@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:26 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 12:40:10 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 22:04:42 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ std::ostream &	operator<<(std::ostream &o, ClapTrap const &i);
 #endif
 
 /**
- * protected instead of private for govong access
+ * protected instead of private for giving access
  * to a derived class
 */

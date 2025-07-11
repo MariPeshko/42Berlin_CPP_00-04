@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:22:19 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 22:22:53 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/11 18:43:48 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 AForm::AForm( void ) :
 	_name("DefaultForm"), _signed(false), _formGrade(1), _formGradeExe(10)
-{ };
+{ }
 
 
 AForm::AForm( std::string name, int grade, int exgrade ) :
@@ -32,7 +32,7 @@ AForm::AForm( std::string name, int grade, int exgrade ) :
 		std::cerr << "On attempt to construct a form object... \n";
 		throw AForm::GradeTooHighException();
 	}
-};
+}
 
 // Copy Constructor
 AForm::AForm ( AForm const & src ) :
@@ -54,7 +54,7 @@ AForm &	AForm::operator=( AForm const &assign ) {
 
 AForm::~AForm() {
 	std::cout << "Destructor of class type AForm" << std::endl;
-};
+}
 
 unsigned int AForm::getGrade() const {
 	return this->_formGrade;
@@ -85,6 +85,21 @@ void	AForm::beSigned(Bureaucrat &b) {
 		throw AForm::GradeTooLowException();
 }
 
+void	AForm::execute(Bureaucrat const & executor) const {
+	std::cout << "Validating signature on the form...\n";
+	if(this->_signed == false) {
+		throw	AForm::NotSignedException();
+	}
+	std::cout << "Validating grade of the Buraucrat " << executor.getName() << "...\n";
+	if(executor.getGrade() > this->getExGrade()) {
+		throw	AForm::GradeTooLowException();
+	}
+	std::cout << executor.getName() << " executes " << this->getName();
+	std::cout << " for a target " << getTarget() << std::endl;
+	action();
+}
+
+
 std::ostream &	operator<<(std::ostream &o, AForm const &i) {
 
     o << "AForm's name " << i.getName() << "\n";
@@ -101,6 +116,10 @@ const char* AForm::GradeTooHighException::what() const throw() {
 
 const char* AForm::GradeTooLowException::what() const throw () {
 	return "_ _ _Form Exception_ _ _ Grade is too low!";
+}
+
+const char* AForm::NotSignedException::what() const throw () {
+	return "_ _ _Form Exception_ _ _ The form isn't signed.";
 }
 
 /**

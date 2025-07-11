@@ -6,12 +6,13 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:26:52 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/09 00:52:33 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/11 16:31:58 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Cat.hpp"
+
 
 // Default Constructor
 Cat::Cat( void )

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:28:21 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/06 17:18:51 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/10 22:21:37 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 #include <iostream>
 #include <string>
-
-/**
- * In C++, a class is only considered abstract if it contains at least 
- * one pure virtual function.
-*/
 
 class	AAnimal
 {
