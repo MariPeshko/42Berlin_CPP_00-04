@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:40:36 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 22:23:15 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/11 19:46:49 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class	Bureaucrat {
 		void				downgrade();
 
 		void				signForm(AForm &f);
+
+		void				executeForm(AForm const & form);
 
 		// override the what() method
 		class GradeTooHighException : public std::exception { 

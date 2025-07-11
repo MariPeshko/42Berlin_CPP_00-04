@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:22:19 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/11 18:43:48 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/11 19:42:24 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	AForm::beSigned(Bureaucrat &b) {
 }
 
 void	AForm::execute(Bureaucrat const & executor) const {
+	std::cout << "An attempt to execute " << this->getName() << "..." << std:: endl;
 	std::cout << "Validating signature on the form...\n";
 	if(this->_signed == false) {
 		throw	AForm::NotSignedException();
