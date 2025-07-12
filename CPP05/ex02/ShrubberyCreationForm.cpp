@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:17:13 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/11 19:35:05 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/12 14:38:07 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,11 @@ const std::string&	ShrubberyCreationForm::getTarget() const {
 }
 
 std::ostream &operator<<(std::ostream &o, const ShrubberyCreationForm &form) {
-	
+	o << "< < < ";
 	// Reuse base class operator<<
 	o << static_cast<const AForm &>(form);
-	o << "ShrubberyCreationForm's Target: " << form.getTarget();
-
+	o << "Target: " << form.getTarget();
+	o << " > > >" << std::endl;
 	return o;
 }
 

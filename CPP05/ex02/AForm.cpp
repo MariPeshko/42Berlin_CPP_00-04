@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:22:19 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/11 19:42:24 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/12 14:47:45 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,15 +112,15 @@ std::ostream &	operator<<(std::ostream &o, AForm const &i) {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return "_ _ _Form Exception_ _ _ Grade is too high!";
+	return "| | Form Exception | | Grade is too high!";
 }
 
 const char* AForm::GradeTooLowException::what() const throw () {
-	return "_ _ _Form Exception_ _ _ Grade is too low!";
+	return "| | Form Exception | | Grade is too low!";
 }
 
 const char* AForm::NotSignedException::what() const throw () {
-	return "_ _ _Form Exception_ _ _ The form isn't signed.";
+	return "| | Form Exception | | The form isn't signed.";
 }
 
 /**
