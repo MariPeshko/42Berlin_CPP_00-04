@@ -11,11 +11,13 @@ Bureaucrat::Bureaucrat( int grade, std::string name ) :
 { 
 	if (this->_grade > 150)
 	{
-		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
+		std::cerr << "On attempt to construct an object with a grade ";
+		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooLowException();
 	}
 	else if (this->_grade < 1) {
-		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
+		std::cerr << "On attempt to construct an object with a grade ";
+		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooHighException();
 	}
 };

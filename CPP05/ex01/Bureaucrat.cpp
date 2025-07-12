@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 20:28:14 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/12 19:38:42 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ Bureaucrat::Bureaucrat( int grade, std::string name ) :
 { 
 	if (this->_grade > 150)
 	{
-		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
+		std::cerr << "On attempt to construct an object with a grade ";
+		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooLowException();
 	}
 	else if (this->_grade < 1) {
-		std::cerr << "On attempt to construct an object with a grade " << grade << "\n";
+		std::cerr << "On attempt to construct an object with a grade ";
+		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooHighException();
 	}
 };

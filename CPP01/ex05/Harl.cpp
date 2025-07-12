@@ -18,6 +18,7 @@ void    Harl::debug( void ) {
 	std::cout << "I really do!" << std::endl;
 
 }
+
 void    Harl::info( void ) {
 	std::cout << "INFO level:" << std:: endl;
 	std::cout << "I cannot believe adding extra bacon costs more money.\n";
@@ -25,6 +26,7 @@ void    Harl::info( void ) {
 	std::cout << "If you did,\n I wouldn’t be asking for more!" << std::endl;
 
 }
+
 void    Harl::warning( void ) {
 	std::cerr << "WARNING level:" << std:: endl;
 	std::cout << "I think I deserve to have some extra bacon for free.\n";
@@ -32,11 +34,13 @@ void    Harl::warning( void ) {
 	std::cout << "ou started working here just last month." << std::endl;
 
 }
+
 void    Harl::error( void ) {
 	std::cerr << RED <<  "ERROR level:" << NORMAL << std:: endl;
 	std::cerr << "This is unacceptable! I want to speak to the manager now.";
 	std::cerr << std:: endl;
 }
+
 void	Harl::complain(std::string level) {
 	
 	std::cout << std::endl;

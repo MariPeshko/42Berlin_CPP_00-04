@@ -6,7 +6,7 @@
 class	MyClass {
 
 	public:
-		//implicit construcors and destructor
+		//implicit constructors and destructor
 		static int	x;
 		static void	SFunc( void );
 	private:
