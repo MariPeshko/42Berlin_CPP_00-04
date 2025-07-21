@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:39 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/13 17:12:07 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:55:27 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,7 @@ static void	test_form_is_executed_sh() {
 	}
 }
 
-int	main(void) {
-	
-	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
-	test_form_is_executed_sh();
-	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
-	//test_Buraucrat_executes_sh();
-	
+static void	test_robot_president() {
 	Bureaucrat	TheGreatest(1, "TheGreatest");
 	Bureaucrat	Six(6, "Six");
 
@@ -127,6 +121,15 @@ int	main(void) {
 	TheGreatest.executeForm(Volodymyr);
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	Six.executeForm(Volodymyr);
+}
+
+int	main(void) {
+	
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	test_form_is_executed_sh();
+	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
+	test_Buraucrat_executes_sh();
+	test_robot_president();
 
 	return 0;
 

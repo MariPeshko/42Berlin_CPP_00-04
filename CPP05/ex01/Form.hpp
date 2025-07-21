@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:17:35 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 22:20:42 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:12:56 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <exception>
 
-class Bureaucrat;
+class	Bureaucrat;
 
 class	Form {
 	
@@ -36,7 +36,6 @@ class	Form {
 
 		void				beSigned(Bureaucrat &b);
 
-		// override the what() method
 		class GradeTooHighException : public std::exception { 
 			public:
 				const char* what() const throw();

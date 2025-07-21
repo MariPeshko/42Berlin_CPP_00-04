@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 14:56:17 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 18:41:38 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:53:41 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,6 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 	std::cout << "Destructor of class type PresidentialPardonForm" << std::endl;
 };
 
-/**
- * std::string::c_str [ cplusplus.com ]
- * Get C string equivalent
- * Returns a pointer to an array that contains a null-terminated sequence 
- * of characters (i.e., a C-string) representing the current value 
- * of the string object.
-*/
 void			PresidentialPardonForm::action() const {
 	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox.\n";
 	std::cout << std::endl;
@@ -82,4 +75,3 @@ std::ostream &operator<<(std::ostream &o, const PresidentialPardonForm &form) {
 	o << " > > >" << std::endl;
 	return o;
 }
-

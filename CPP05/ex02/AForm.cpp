@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:22:19 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 19:41:23 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:40:07 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ AForm::AForm( std::string name, int grade, int exgrade ) :
 		std::cerr << "On attempt to construct a form object... \n";
 		throw AForm::GradeTooHighException();
 	}
+	std::cout << "Constructor parametric of Form class type" << std::endl;
 }
 
 // Copy Constructor
 AForm::AForm ( AForm const & src ) :
 	_formGrade(src.getGrade()), _name(src.getName()), 
 	_formGradeExe(src.getExGrade()), _signed(src.getBoolSigned())	{
-		
+				
 		std::cout << "Copy Constructor of AForm class type" << std::endl;
+		
 }
 
 // Assignment operator 
@@ -56,36 +58,36 @@ AForm::~AForm() {
 	std::cout << "Destructor of class type AForm" << std::endl;
 }
 
-unsigned int AForm::getGrade() const {
+unsigned int		AForm::getGrade() const {
 	return this->_formGrade;
 }
 
-unsigned int AForm::getExGrade() const {
+unsigned int		AForm::getExGrade() const {
 	return this->_formGradeExe;
 }
 
-const std::string& AForm::getName() const {
+const std::string&	AForm::getName() const {
 	return this->_name;
 }
 
-const std::string AForm::getSigned() const {
+const std::string	AForm::getSigned() const {
 	if (this->_signed == false)
 		return "False.";
 	return "True.";
 }
 
-bool	AForm::getBoolSigned() const {
+bool				AForm::getBoolSigned() const {
 	return this->_signed;
 }
 
-void	AForm::beSigned(Bureaucrat &b) {
+void				AForm::beSigned(Bureaucrat &b) {
 	if (b.getGrade() <= this->_formGrade)
 		this->_signed = true;
 	else
 		throw AForm::GradeTooLowException();
 }
 
-void	AForm::execute(Bureaucrat const & executor) const {
+void				AForm::execute(Bureaucrat const & executor) const {
 	std::cout << "An attempt to execute " << this->getName() << "..." << std:: endl;
 	std::cout << "Validating signature on the form...\n";
 	if(this->_signed == false) {
@@ -100,8 +102,7 @@ void	AForm::execute(Bureaucrat const & executor) const {
 	action();
 }
 
-
-std::ostream &	operator<<(std::ostream &o, AForm const &i) {
+std::ostream &		operator<<(std::ostream &o, AForm const &i) {
 
     o << "AForm's name " << i.getName() << "\n";
 	o << "Grade required to sign " << i.getGrade();

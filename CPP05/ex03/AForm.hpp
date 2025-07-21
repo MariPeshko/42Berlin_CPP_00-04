@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:17:16 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 20:09:15 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:51:23 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@
 #include <string>
 #include <exception>
 
-class Bureaucrat;
-
-/*
-The base class Form must be an abstract class and should therefore
-be renamed AForm.
-*/
+class	Bureaucrat;
 
 class	AForm {
 	
@@ -31,7 +26,7 @@ class	AForm {
 		AForm( std::string name, int grade, int exgrade );
 		AForm (AForm const & src);
 		AForm &	operator=( AForm const &assign );
-		virtual ~AForm(); // ? virtual - common practice
+		virtual ~AForm();
 
 		unsigned int		getGrade() const;
 		unsigned int		getExGrade() const;
@@ -41,7 +36,8 @@ class	AForm {
 
 		void				beSigned(Bureaucrat &b);
 		void				execute(Bureaucrat const & executor) const;
-		// pure virtual function
+		
+		// pure virtual functions
 		virtual void				action() const = 0;
 		virtual const std::string &	getTarget() const = 0;
 

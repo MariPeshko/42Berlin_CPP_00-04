@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:39 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/10 21:58:37 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:56:31 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ static void	test_basic() {
 		std::cerr << e.what() << std:: endl;
 	}
 	try {
-		Form	TooHighExGrade("TooHighExGrade", 15, -1);	
+		Form	TooHighExGrade("TooHighExGrade", 15, 0);	
 	} catch ( const std::exception &e) {
 		std::cerr << e.what() << std:: endl;
 	}
 }
 
-static void test_Form_beSigned() {
+static void	test_Form_beSigned() {
 	try {
 		Bureaucrat	Bob(1, "Bob");
 		Form		Anmeldung("Anmeldung", 1, 10);
@@ -75,7 +75,7 @@ static void test_Form_beSigned() {
 	}
 }
 
-void	test_Bur_signForm() {
+static void	test_Bur_signForm() {
 	{
 		Bureaucrat	Bob(1, "Bob");
 		Form		Anmeldung("Anmeldung", 1, 10);
@@ -90,17 +90,15 @@ void	test_Bur_signForm() {
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std:: endl;
 		}
-		
 	}
 }
 
-
-int	main(void) {
+int			main( void ) {
 	
-	//test_basic();
+	test_basic();
 	//test_Form_beSigned();
-	test_Bur_signForm();
+	//test_Bur_signForm();
 	std::cout << "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " << std:: endl << std:: endl;
 	return 0;
-
+	
 }

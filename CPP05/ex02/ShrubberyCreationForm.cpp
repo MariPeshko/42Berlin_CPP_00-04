@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:17:13 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 14:38:07 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:49:16 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void			ShrubberyCreationForm::action() const {
 	f << "       |.|        | |         | |" << std::endl;
 	f << "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
 				  
-	
 	f.close();
 }
 
@@ -101,4 +100,3 @@ std::ostream &operator<<(std::ostream &o, const ShrubberyCreationForm &form) {
 	o << " > > >" << std::endl;
 	return o;
 }
-

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 19:38:59 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:54:51 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 Bureaucrat::Bureaucrat( void ) :
 	_grade(75), _name("Default")
-{ };
-
+{
+	std::cout << "Constructor default of Bureaucrat class type" << std::endl;
+}
 
 Bureaucrat::Bureaucrat( int grade, std::string name ) :
 	_grade(grade), _name(name)
@@ -34,15 +35,16 @@ Bureaucrat::Bureaucrat( int grade, std::string name ) :
 		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooHighException();
 	}
-};
+	std::cout << "Constructor parametric of Bureaucrat class type" << std::endl;
+}
 
 // Copy Constructor
 Bureaucrat::Bureaucrat ( Bureaucrat const & src ) :
-	_grade(src.getGrade()), _name(src.getName())	{ }
+	_grade(src.getGrade()), _name(src.getName())
+{ }
 
 // Assignment operator 
-Bureaucrat &	Bureaucrat::operator=( Bureaucrat const &assign ) {
-	
+Bureaucrat &		Bureaucrat::operator=( Bureaucrat const &assign ) {
 	if (this != &assign) {
 		this->_grade = assign._grade;
 	}
@@ -51,37 +53,35 @@ Bureaucrat &	Bureaucrat::operator=( Bureaucrat const &assign ) {
 
 Bureaucrat::~Bureaucrat() {
 	std::cout << "Destructor of class type Bureaucrat" << std::endl;
-};
+}
 
-unsigned int Bureaucrat::getGrade() const {
+unsigned int		Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
-const std::string& Bureaucrat::getName() const {
+const std::string&	Bureaucrat::getName() const {
 	return this->_name;
 }
 
-std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
-
+std::ostream &		operator<<(std::ostream &o, Bureaucrat const &i) {
     o << i.getName() << ", bureaucrat grade " << i.getGrade();
 	o << "." << std::endl;
     return o;
-
 }
 
-void	Bureaucrat::upgrade() {
+void				Bureaucrat::upgrade() {
 	if (this->_grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade--;
 }
 
-void	Bureaucrat::downgrade() {
+void				Bureaucrat::downgrade() {
 	if (this->_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm &f) {
+void				Bureaucrat::signForm(AForm &f) {
 	if (this->_grade <= f.getGrade()) {
 		std::cout << this->getName() << " signed " << f.getName();
 		std::cout << std::endl;
@@ -90,23 +90,27 @@ void	Bureaucrat::signForm(AForm &f) {
 		std::cout << " because \n" << this->getName() << "\'s grade ";
 		std::cout << "is not high enough." << std::endl;
 	}
-		
 	f.beSigned(*this);
 }
 
-void	Bureaucrat::executeForm(AForm const & form) {
+void				Bureaucrat::executeForm(AForm const & form) {
 
-	std::cout << "Buraucrat attempts to execute " << form.getName() << "..." << std:: endl;
+	std::cout << "Buraucrat attempts to execute " << form.getName();
+	std::cout << "..." << std:: endl;
 	std::cout << "Validating signature on the form...\n";
 	if(form.getBoolSigned() == false) {
-		std::cerr << form.getName() << " " << form.getTarget() << " isn't signed." << std::endl;
+		std::cerr << form.getName() << " " << form.getTarget();
+		std::cerr << " isn't signed." << std::endl;
 		return;
 	}
-	std::cout << "Validating grade of the Buraucrat " << this->getName() << "...\n";
+	std::cout << "Validating grade of the Buraucrat " << this->getName();
+	std::cout << "...\n";
 	if(this->getGrade() > form.getExGrade()) {
 		std::cerr << this->getName() << "'s grade is " << this->getGrade();
-		std::cerr << " and it's lower than " << form.getName() << " " << form.getTarget();
-		std::cerr << " requires. It must be equal or higher than " << form.getExGrade() << "." << std::endl;
+		std::cerr << " and it's lower than " << form.getName() << " ";
+		std::cerr << form.getTarget();
+		std::cerr << " requires. It must be equal or higher than ";
+		std::cerr << form.getExGrade() << "." << std::endl;
 		return;
 	}
 	std::cout << this->getName() << " executes " << form.getName() << std::endl;
@@ -114,27 +118,10 @@ void	Bureaucrat::executeForm(AForm const & form) {
 
 }
 
-
-// override the what() method
-// throw() - This is an exception specification (old C++ syntax).
-// It means that this function is guaranteed not to throw any exceptions.
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
+const char*			Bureaucrat::GradeTooHighException::what() const throw() {
 	return "_ _ _Bur Exception_ _ _ Grade too high!";
 }
 
-// override the what() method
-// throw() - This is an exception specification (old C++ syntax).
-// It means that this function is guaranteed not to throw any exceptions.
-const char* Bureaucrat::GradeTooLowException::what() const throw () {
+const char*			Bureaucrat::GradeTooLowException::what() const throw () {
 	return "_ _ _Bur Exception_ _ _ Grade too low!";
 }
-
-/**
- * Notes
- * 
- * Modern C++ (C++11 and later)
- * Instead of throw(), you should use noexcept:
- * 
- * 'const char* what() const noexcept;'
- * 
- */

@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 22:22:19 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 21:20:55 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:51:02 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 #include <exception>
 #include <string>
 
-
 AForm::AForm( void ) :
 	_name("DefaultForm"), _signed(false), _formGrade(1), _formGradeExe(10)
-{ }
-
+{
+	std::cout << "Default constructor of AForm  abstract class type" << std::endl;
+}
 
 AForm::AForm( std::string name, int grade, int exgrade ) :
 	_name(name), _signed(false), _formGrade(grade), _formGradeExe(exgrade)
 {
-	std::cout << "Constructor of AForm  abstract class type" << std::endl;
 	if (this->_formGrade > 150 || this->_formGradeExe > 150) {
 		std::cerr << "On attempt to construct a form object... \n";
 		throw AForm::GradeTooLowException();
@@ -34,6 +33,7 @@ AForm::AForm( std::string name, int grade, int exgrade ) :
 		std::cerr << "On attempt to construct a form object... \n";
 		throw AForm::GradeTooHighException();
 	}
+	std::cout << "Constructor of AForm  abstract class type" << std::endl;
 }
 
 // Copy Constructor
@@ -58,36 +58,36 @@ AForm::~AForm() {
 	std::cout << "Destructor of class type AForm" << std::endl;
 }
 
-unsigned int AForm::getGrade() const {
+unsigned int		AForm::getGrade() const {
 	return this->_formGrade;
 }
 
-unsigned int AForm::getExGrade() const {
+unsigned int		AForm::getExGrade() const {
 	return this->_formGradeExe;
 }
 
-const std::string& AForm::getName() const {
+const std::string&	AForm::getName() const {
 	return this->_name;
 }
 
-const std::string AForm::getSigned() const {
+const std::string	AForm::getSigned() const {
 	if (this->_signed == false)
 		return "False.";
 	return "True.";
 }
 
-bool	AForm::getBoolSigned() const {
+bool				AForm::getBoolSigned() const {
 	return this->_signed;
 }
 
-void	AForm::beSigned(Bureaucrat &b) {
+void				AForm::beSigned(Bureaucrat &b) {
 	if (b.getGrade() <= this->_formGrade)
 		this->_signed = true;
 	else
 		throw AForm::GradeTooLowException();
 }
 
-void	AForm::execute(Bureaucrat const & executor) const {
+void				AForm::execute(Bureaucrat const & executor) const {
 	std::cout << "An attempt to execute " << this->getName() << "..." << std:: endl;
 	std::cout << "Validating signature on the form...\n";
 	if(this->_signed == false) {
@@ -101,7 +101,6 @@ void	AForm::execute(Bureaucrat const & executor) const {
 	std::cout << " for a target " << getTarget() << std::endl;
 	action();
 }
-
 
 std::ostream &	operator<<(std::ostream &o, AForm const &i) {
 
@@ -124,13 +123,3 @@ const char* AForm::GradeTooLowException::what() const throw () {
 const char* AForm::NotSignedException::what() const throw () {
 	return "| | Form Exception | | The form isn't signed.";
 }
-
-/**
- * Notes
- * 
- * Modern C++ (C++11 and later)
- * Instead of throw(), you should use noexcept:
- * 
- * 'const char* what() const noexcept;'
- * 
- */

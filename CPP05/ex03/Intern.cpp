@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:37:04 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 21:35:15 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:53:30 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ AForm*	Intern::makeForm(std::string formName, std::string formTarget) {
 			return (this->*f[i])(formTarget);
 		}
 	}
+	
 	std::cerr << "There is no " << formName << " form in our bureau.";
 	std::cerr << std::endl;
+	
 	return nullptr;
 }

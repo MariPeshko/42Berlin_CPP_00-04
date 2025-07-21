@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:14:34 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 19:42:08 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 12:55:49 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ Bureaucrat::Bureaucrat( int grade, std::string name ) :
 		std::cerr << grade << std::endl;
 		throw Bureaucrat::GradeTooHighException();
 	}
-};
+	std::cout << "Constructor parametric of Bureaucrat class type" << std::endl;
+}
 
 // Copy Constructor
 Bureaucrat::Bureaucrat ( Bureaucrat const & src ) :
@@ -51,17 +52,17 @@ Bureaucrat &	Bureaucrat::operator=( Bureaucrat const &assign ) {
 
 Bureaucrat::~Bureaucrat() {
 	std::cout << "Destructor of class type Bureaucrat" << std::endl;
-};
+}
 
-unsigned int Bureaucrat::getGrade() const {
+unsigned int		Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
-const std::string& Bureaucrat::getName() const {
+const std::string&	Bureaucrat::getName() const {
 	return this->_name;
 }
 
-std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
+std::ostream &		operator<<(std::ostream &o, Bureaucrat const &i) {
 
     o << i.getName() << ", bureaucrat grade " << i.getGrade();
 	o << "." << std::endl;
@@ -69,20 +70,19 @@ std::ostream &	operator<<(std::ostream &o, Bureaucrat const &i) {
 
 }
 
-void	Bureaucrat::upgrade() {
+void				Bureaucrat::upgrade() {
 	if (this->_grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade--;
 }
 
-void	Bureaucrat::downgrade() {
+void				Bureaucrat::downgrade() {
 	if (this->_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm &f) {
-	
+void				Bureaucrat::signForm(AForm &f) {
 	if (this->_grade <= f.getGrade()) {
 		std::cout << this->getName() << " signed " << f.getName();
 		std::cout << std::endl;
@@ -91,11 +91,10 @@ void	Bureaucrat::signForm(AForm &f) {
 		std::cout << " because \n" << this->getName() << "\'s grade ";
 		std::cout << "is not high enough." << std::endl;
 	}
-		
 	f.beSigned(*this);
 }
 
-void	Bureaucrat::executeForm(AForm const & form) {
+void				Bureaucrat::executeForm(AForm const & form) {
 
 	std::cout << "Buraucrat attempts to execute " << form.getName();
 	std::cout << "..." << std:: endl;
@@ -120,16 +119,10 @@ void	Bureaucrat::executeForm(AForm const & form) {
 	
 }
 
-// override the what() method
-// throw() - This is an exception specification (old C++ syntax).
-// It means that this function is guaranteed not to throw any exceptions.
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
+const char*			Bureaucrat::GradeTooHighException::what() const throw() {
 	return "_ _ _Bur Exception_ _ _ Grade too high!";
 }
 
-// override the what() method
-// throw() - This is an exception specification (old C++ syntax).
-// It means that this function is guaranteed not to throw any exceptions.
-const char* Bureaucrat::GradeTooLowException::what() const throw () {
+const char*			Bureaucrat::GradeTooLowException::what() const throw () {
 	return "_ _ _Bur Exception_ _ _ Grade too low!";
 }

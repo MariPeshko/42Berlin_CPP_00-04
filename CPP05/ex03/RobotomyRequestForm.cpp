@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 14:49:58 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/07/12 18:41:08 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/07/15 13:54:07 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 };
 
 /**
- * std::string::c_str [ cplusplus.com ]
- * Get C string equivalent
- * Returns a pointer to an array that contains a null-terminated sequence 
- * of characters (i.e., a C-string) representing the current value 
- * of the string object.
- * 
  * @p srand() Seeds the pseudo-random number generator used by std::rand() 
  * with the value seed.
  * @p rand() Returns a pseudo-random integral value from 
@@ -95,4 +89,3 @@ std::ostream &operator<<(std::ostream &o, const RobotomyRequestForm &form) {
 	o << " > > >" << std::endl;
 	return o;
 }
-
