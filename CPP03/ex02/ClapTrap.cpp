@@ -6,7 +6,7 @@
 /*   By: mpeshko <mpeshko@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:06:09 by mpeshko           #+#    #+#             */
-/*   Updated: 2025/06/06 16:55:15 by mpeshko          ###   ########.fr       */
+/*   Updated: 2025/08/24 20:21:56 by mpeshko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,19 +75,19 @@ const std::string& ClapTrap::getName() const {
 
 }
 
-const int   ClapTrap::getEnergyPoints() const {
+int   ClapTrap::getEnergyPoints() const {
 
     return this->_energy_points;
 
 }
 
-const int   ClapTrap::getHitPoints() const {
+int   ClapTrap::getHitPoints() const {
 
     return this->_hit_points;
 
 }
 
-const int	ClapTrap::getDamage() const {
+int	ClapTrap::getDamage() const {
 
 	return this->_attack_damage;
 
