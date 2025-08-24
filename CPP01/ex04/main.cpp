@@ -22,7 +22,7 @@ void	readFile(std::ifstream& ifs, std::string filename,
 		std::string const StringOccur, std::string const StringReplace) {
 
 	std::string		line;
-	std::ofstream	ofs1(filename.append(".replace"));
+	std::ofstream	ofs1(filename.append(".replace").c_str());
 
     while (std::getline(ifs, line)) {
 		search(line, StringOccur, StringReplace);
@@ -52,7 +52,6 @@ bool is_directory(const std::string& path) {
 
 int	main(int argc, char **argv)
 {
-	int	occur = 0;
 
 	if (argc != 4)	{
 		std::cerr << "<filename> <String> <StringToReplace>";

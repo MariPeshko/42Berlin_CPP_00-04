@@ -8,9 +8,13 @@ Zombie::Zombie() : name("first_name") {}
 // The Constructor overloading
 Zombie::Zombie(std::string name) : name(name) {}
 
-void Zombie::announce(void) {
-    std::cout << name << ": ";
-    std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+void	Zombie::announce(void) {
+	std::cout << name << ": ";
+	std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(const std::string& rename) {
+	name = rename;
 }
 
 // The destructor must print a message with 
